@@ -1,0 +1,30 @@
+{
+    "title": "Test run",
+    "execution": {
+        "start_time": 1712848846.7734988,
+        "end_time": 1712848846.9775975,
+        "duration": 204,
+        "cumulative_duration": 0
+    },
+    "stats": {
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+        "broken": 0,
+        "muted": 0,
+        "total": 0
+    },
+    "results": [],
+    "threads": [],
+    "suites": [],
+    "environment": null,
+    "host_data": {
+        "system": "Windows",
+        "node": "DESKTOP-VFG743U",
+        "release": "10",
+        "version": "10.0.22621",
+        "machine": "AMD64",
+        "python": "3.11.9.final.0",
+        "pip": "24.0"
+    }
+}
