@@ -4,11 +4,13 @@ from locators.review.internet_locators import ReviewOnTheHouse, ReviewMainPage, 
 from locators.review.internet_locators import ReviewForRegion, ReviewOnTheStreet, ReviewProviderFeedback
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
+from qaseio.pytest import qase
 
 
 class ReviewPageRegion(BasePage):
 
     @allure.step("Скролл  до кнопки оставления отзыва и клик на нее")
+    @qase.step("Скролл  до кнопки оставления отзыва и клик на нее")
     def scroll_to_feedback_region(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewForRegion.SCROLL)
@@ -18,6 +20,7 @@ class ReviewPageRegion(BasePage):
         time.sleep(3)
 
     @allure.step("Оставление отзыва")
+    @qase.step("Оставление отзыва")
     def leave_feedback(self):
         self.element_is_visible(ReviewForRegion.CHOOSE_PROVIDER).click()
         self.element_is_visible(ReviewForRegion.CLICK_PROVIDER).click()
@@ -35,6 +38,7 @@ class ReviewPageRegion(BasePage):
         assert close.text == "Спасибо за отзыв!"
 
     @allure.step("Скролл  до кнопки оставления отзыва на главной и клик на нее")
+    @qase.step("Скролл  до кнопки оставления отзыва на главной и клик на нее")
     def scroll_to_feedback_maim_page(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewMainPage.SCROLL)
@@ -46,6 +50,7 @@ class ReviewPageRegion(BasePage):
 
 class ReviewPageStreet(BasePage):
     @allure.step("Оставление отзыва на улице")
+    @qase.step("Оставление отзыва на улице")
     def leave_the_feedback_101_pub(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewOnTheStreet.SCROLL)
@@ -63,6 +68,7 @@ class ReviewPageStreet(BasePage):
         assert close.text == "Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб"
 
     @allure.step("Оставление отзыва на золотом доме")
+    @qase.step("Оставление отзыва на золотом доме")
     def leave_the_feedback_101_pub_house(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewOnTheStreet.SCROLL)
@@ -82,6 +88,7 @@ class ReviewPageStreet(BasePage):
         assert close.text == "Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб"
 
     @allure.step("Оставление отзыва у оператора")
+    @qase.step("Оставление отзыва у оператора")
     def leave_the_feedback_101_pub_operator(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewOperator.SCROLL)
@@ -99,6 +106,7 @@ class ReviewPageStreet(BasePage):
 
 class ReviewPageProvider(BasePage):
     @allure.step("Скролл до кнопки оставления отзыва в карточке провайдера и клик на нее")
+    @qase.step("Скролл до кнопки оставления отзыва в карточке провайдера и клик на нее")
     def scroll_to_feedback_provider(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewProvider.SCROLL)
@@ -108,6 +116,7 @@ class ReviewPageProvider(BasePage):
         time.sleep(3)
 
     @allure.step("Оставление отзыва у провайдера")
+    @qase.step("Оставление отзыва у провайдера")
     def leave_feedback_provider(self):
         self.element_is_visible(ReviewForRegion.CHOOSE_INTERNET).click()
         self.element_is_visible(ReviewForRegion.CLICK_INTERNET).click()
@@ -123,6 +132,7 @@ class ReviewPageProvider(BasePage):
         assert close.text == "Спасибо за отзыв!"
 
     @allure.step("Скролл до кнопки оставления отзыва в карточке провайдера в разделе отзывы и клик на нее")
+    @qase.step("Скролл до кнопки оставления отзыва в карточке провайдера в разделе отзывы и клик на нее")
     def scroll_to_feedback_provider_feedback(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewForRegion.SCROLL)
