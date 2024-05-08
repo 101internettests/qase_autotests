@@ -17,7 +17,8 @@
 		},
 		"defect": false,
 		"project": "INT",
-		"chunk": 200
+		"chunk": 200,
+		"title": "Утренние автотесты"
 	},
 	"framework": {
 		"pytest": {
