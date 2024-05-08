@@ -5,10 +5,12 @@ from locators.forms.internet_locator import RecentlyConnectionTariffs, NonPartne
 from locators.forms.mol_locators import WaitMOLCallLocators, PopUpPhoneNubMsk, ReferralUrlTariffMOL, WriteTariffNameMOL
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
+from qaseio.pytest import qase
 
 
 class FormsPage(BasePage):
     @allure.step("Выбрать отзывы в футере")
+    @qase.step("Выбрать отзывы в футере")
     def chose_reviews_button(self):
         scroll = self.element_is_visible(WaitMOLCallLocators.SCROLL)
         actions = ActionChains(self.driver)
@@ -16,6 +18,7 @@ class FormsPage(BasePage):
         self.element_is_visible(WaitMOLCallLocators.REVIEWS).click()
 
     @allure.step("Ввести номер в форме 'Поможем выбрать лучший тариф'")
+    @qase.step("Ввести номер в форме 'Поможем выбрать лучший тариф'")
     def fill_form_best_tariff(self):
         scroll = self.element_is_visible(WaitCallLocators.SCROLL)
         actions = ActionChains(self.driver)
@@ -25,10 +28,12 @@ class FormsPage(BasePage):
         self.element_is_visible(WaitCallLocators.BUTTON_CALL_ME).click()
 
     @allure.step("Выбрать 'интернет в офис' в меню бургер")
+    @qase.step("Выбрать 'интернет в офис' в меню бургер")
     def fill_office_tender(self):
         self.element_is_visible(OfficeOrder.INTERNET_IN_OFFICE).click()
 
     @allure.step("Заполнить адрес")
+    @qase.step("Заполнить адрес")
     def fill_office_tender_address(self):
         self.element_is_visible(OfficeOrder.CHOOSE_STREET).send_keys("Тестовый б-р")
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
@@ -37,12 +42,14 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.TENDER_BUTTON).click()
 
     @allure.step("Заполнить заявку на подключение интернета в офис")
+    @qase.step("Заполнить заявку на подключение интернета в офис")
     def fill_the_application(self):
         self.element_is_visible(OfficeOrder.PERSON_INPUT).send_keys("Тест")
         self.element_is_visible(OfficeOrder.TELEPHON_INPUT).send_keys("1111111111")
         self.element_is_visible(OfficeOrder.BUTTON_SEND_ORDER).click()
 
     @allure.step("Выбрать регион Москва в хедере")
+    @qase.step("Выбрать регион Москва в хедере")
     def change_region_moscow(self):
         self.element_is_visible(WaitCallLocators.CHOOSE_THE_REGION).click()
         time.sleep(3)
@@ -51,6 +58,7 @@ class FormsPage(BasePage):
         self.element_is_visible(PopUpPhoneNubMsk.CHOOSE_MOSCOW).click()
 
     @allure.step("Заполнить адрес на главной странице")
+    @qase.step("Заполнить адрес на главной странице")
     def fill_address_on_main_page(self):
         self.element_is_visible(OfficeOrder.CHOOSE_STREET).send_keys("Шарикоподшипниковская")
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
@@ -60,10 +68,12 @@ class FormsPage(BasePage):
         self.element_is_visible(PopUpPhoneNubMsk.BUTTOM_SHOW_TARIFFS).click()
 
     @allure.step("Открыть попап")
+    @qase.step("Открыть попап")
     def open_popup(self):
         self.element_is_visible(AddreesTariffForm.OPEN_PPOPUP).click()
 
     @allure.step("Ввести номер телефона в попап")
+    @qase.step("Ввести номер телефона в попап")
     def fill_popup_number(self):
         text_in_pop_up = self.element_is_present(PopUpPhoneNub.POP_UP_TEXT).text
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
@@ -80,11 +90,13 @@ class FormsPage(BasePage):
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Закрыть попап")
+    @qase.step("Закрыть попап")
     def close_popup(self):
         if self.element_is_present(AddreesTariffForm.CLOSE_POP_UP):
             self.element_is_visible(AddreesTariffForm.CLOSE_POP_UP).click()
 
     @allure.step("Заполнить заявку по кнопке 'подключить'")
+    @qase.step("Заполнить заявку по кнопке 'подключить'")
     def fill_connect_to_application(self):
         self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
         time.sleep(2)
@@ -101,6 +113,7 @@ class FormsPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Выбрать 'интернет на дачу' в футере")
+    @qase.step("Выбрать 'интернет на дачу' в футере")
     def chose_button_internet_outtown_mol(self):
         scroll = self.element_is_visible(WaitMOLCallLocators.SCROLL)
         actions = ActionChains(self.driver)
@@ -108,6 +121,7 @@ class FormsPage(BasePage):
         self.element_is_visible(OutOfTownApplication.OUT_OF_TOWN_BUTTON).click()
 
     @allure.step("Заполнить заявку в частном доме")
+    @qase.step("Заполнить заявку в частном доме")
     def fill_connect_to_application_outtown(self):
         self.element_is_visible(OutOfTownApplication.INPUT_NAME).send_keys("Тест")
         self.element_is_visible(OutOfTownApplication.INPUT_NUMBER).send_keys("1111111111")
@@ -116,6 +130,7 @@ class FormsPage(BasePage):
         assert success_text.text == "Спасибо, ваша заявка на подключение принята и уже отправлена в работу! Ждите звонка в ближайшее время!"
 
     @allure.step("Выбрать 'Поиск по адресу' внизу страницы")
+    @qase.step("Выбрать 'Поиск по адресу' внизу страницы")
     def chose_button_find_by_address(self):
         scroll = self.element_is_visible(WaitMOLCallLocators.SCROLL)
         actions = ActionChains(self.driver)
@@ -123,11 +138,13 @@ class FormsPage(BasePage):
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FIND_ADDRESS).click()
 
     @allure.step("Заполнить адрес через кнопку 'проверить адрес' вариант 2")
+    @qase.step("Заполнить адрес через кнопку 'проверить адрес' вариант 2")
     def fill_address_in_addresspage_second(self):
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FOR_CONNECTION).click()
         time.sleep(3)
 
-    @allure.step("Заполнить заявку по кнопке 'подключить' 2 варинт")
+    @allure.step("Заполнить заявку по кнопке 'подключить' 2 вариант")
+    @qase.step("Заполнить заявку по кнопке 'подключить' 2 вариант")
     def fill_connect_to_application_second(self):
         time.sleep(2)
         self.write_tariff_name()
