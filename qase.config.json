@@ -13,12 +13,12 @@
 	"testops": {
 		"bulk": true,
 		"run": {
-			"complete": true
+			"complete": true,
+			"title": "Утренние автотесты"
 		},
 		"defect": false,
 		"project": "INT",
-		"chunk": 200,
-		"title": "Утренние автотесты"
+		"chunk": 200
 	},
 	"framework": {
 		"pytest": {
