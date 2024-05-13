@@ -39,7 +39,7 @@ jobs:
 
       - name: tests
         # if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod --alluredir=allure-results
+        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod --alluredir=allure-resultss
         continue-on-error: true
 
       - name: Install Java
@@ -50,7 +50,7 @@ jobs:
       - name: install Allure
         run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz && sudo tar -zxvf allure-2.27.0.tgz -C /opt/ && sudo ln -s /opt/allure-2.27.0/bin/allure /usr/bin/allure
       - name: Generate report
-        run: allure generate -c allure-results -o _site
+        run: allure generate -c allure-resultss -o _site
       - name: Save report as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -89,20 +89,20 @@ jobs:
 
       - name: Unzip artifacts
         run: |
-          mkdir -p allure-results
-          unzip -q artifacts.zip -d allure-results
+          mkdir -p allure-resultss
+          unzip -q artifacts.zip -d allure-resultss
           mkdir -p old_pages pages_history
           unzip -q pages.zip -d old_pages
           tar -xf old_pages/artifact.tar -C pages_history
 
       - name: Copy history to Allure results
         run: |
-          cp -r pages_history/history/* allure-results
-#          cp -r pages_history/history/ allure-results
+          cp -r pages_history/history/* allure-resultss
+#          cp -r pages_history/history/ allure-resultss
 
       - name: Store Allure history
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
-          path: allure-results
+          name: allure-resultss
+          path: allure-resultss
           retention-days: 2
