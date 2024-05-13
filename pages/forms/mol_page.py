@@ -160,6 +160,7 @@ class FormsPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Заполнить адрес через кнопку 'проверить адрес'")
+    @qase.step("Заполнить адрес через кнопку 'проверить адрес'")
     def fill_address_in_addresspage(self):
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_CHECK_ADDRESS).click()
         self.element_is_visible(RecentlyConnectionTariffs.INPUT_STREET).send_keys("Тестовская")
@@ -171,11 +172,13 @@ class FormsPage(BasePage):
         self.element_is_visible(RecentlyConnectionTariffs.CHECK_CONNECTION).click()
 
     @allure.step("Выбрать 'провайдеры' в меню бургер")
+    @qase.step("Выбрать 'провайдеры' в меню бургер")
     def chose_providers_burger_button(self):
         self.element_is_visible(NonPartnerCardRecCon.PROVIDERS_BUTTON).click()
         time.sleep(3)
 
     @allure.step("Выбрать в фильтрах 'Моснет'")
+    @qase.step("Выбрать в фильтрах 'Моснет'")
     def chose_mosnet_provider(self):
         self.element_is_visible(NonPartnerCardRecCon.CHOSE_PROVIDER_FILTER).send_keys("Моснет")
         self.element_is_visible(NonPartnerCardRecCon.CHOSE_MOSNET).click()
@@ -184,6 +187,7 @@ class FormsPage(BasePage):
         time.sleep(3)
 
     @allure.step("Заполнить адрес с карточке провайдера")
+    @qase.step("Заполнить адрес с карточке провайдера")
     def fill_the_address_provider_card(self):
         self.element_is_visible(NonPartnerCardRecCon.INPUT_STREET).send_keys("Тестовый")
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_STREET).click()
@@ -193,6 +197,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.SHOW_TARIFFS).click()
 
     @allure.step("Выбрать регион Московская область в хедере")
+    @qase.step("Выбрать регион Московская область в хедере")
     def change_region_moscow(self):
         self.element_is_visible(WaitCallLocators.CHOOSE_THE_REGION).click()
         time.sleep(3)
@@ -200,6 +205,7 @@ class FormsPage(BasePage):
         time.sleep(3)
 
     @allure.step("Выбрать в фильтрах 'АВК-Веллком'")
+    @qase.step("Выбрать в фильтрах 'АВК-Веллком'")
     def chose_abk_provider(self):
         self.element_is_visible(NonPartnerCardRecCon.CHOSE_PROVIDER_FILTER).send_keys("АВК-Веллком")
         self.element_is_visible(ReferralUrlTariff.CHOSE_ABK_WELCOME).click()
@@ -209,6 +215,7 @@ class FormsPage(BasePage):
         time.sleep(3)
 
     @allure.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'АВК-Веллком'")
+    @qase.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'АВК-Веллком'")
     def check_redirect(self):
         scroll = self.element_is_visible(ReferralUrlTariff.SCROLL)
         actions = ActionChains(self.driver)
@@ -217,6 +224,7 @@ class FormsPage(BasePage):
         self.switch_handles_window()
 
     @allure.step("Написать название тарифа в консоль")
+    @qase.step("Написать название тарифа в консоль")
     def write_tariff_name(self):
         if self.element_is_visible(WriteTariffNameMOL.NAME_OF_TARIFF):
             name_element = self.element_is_visible(WriteTariffNameMOL.NAME_OF_TARIFF)
@@ -241,18 +249,21 @@ class FormsPage(BasePage):
                 print("Элемент не найден или не содержит текст")
 
     @allure.step("Скролл до формы 1 клик снизу страницы")
+    @qase.step("Скролл до формы 1 клик снизу страницы")
     def scroll_to_form(self):
         scroll = self.element_is_visible(OneClickLocators.SCROLL_MAIN_PAGE)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
 
-    @allure.step("Скролл до формы 1 клик на страринце поиска по адресу")
+    @allure.step("Скролл до формы 1 клик на странице поиска по адресу")
+    @qase.step("Скролл до формы 1 клик на странице поиска по адресу")
     def scroll_to_tohome(self):
         scroll = self.element_is_visible(OneClickLocators.SCROLL_TOHOME_PAGE)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
 
     @allure.step("Заполнить форму 1 клик на главной странице")
+    @qase.step("Заполнить форму 1 клик на главной странице")
     def one_click_main(self):
         self.element_is_visible(OneClickLocators.NUMBER_OF_PHONE).send_keys("1111111111")
         self.element_is_visible(OneClickLocators.BUTTON_CHOSE_THE_TARIFF).click()
@@ -260,6 +271,7 @@ class FormsPage(BasePage):
         assert success.text == "Ваша заявка принята! Мы свяжемся с вами в ближайшее время."
 
     @allure.step("Заполнить форму 1 клик на странице отзывов")
+    @qase.step("Заполнить форму 1 клик на странице отзывов")
     def one_click_review(self):
         self.element_is_visible(OneClickLocators.NUMBER_OF_PHONE).send_keys("1111111111")
         self.element_is_visible(OneClickLocators.BUTTON_GET_CONSULTATION).click()

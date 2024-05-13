@@ -4,15 +4,18 @@ from locators.tags.internet_locators import DailyTagPages101Locators, TagPageloc
 from locators.tags.internet_locators import PopupFillTheAddress, PopupSuccess, AddreesTariffForm, WriteTariffName
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
+from qaseio.pytest import qase
 
 
 class OneHundredMainPage(BasePage):
 
     @allure.step("Открыть страницу Тарифы")
+    @qase.step("Открыть страницу Тарифы")
     def open_rates(self):
         self.element_is_visible(DailyTagPages101Locators.CLICK_ON_THE_RATES).click()
 
     @allure.step("Выполнить проверку всех тегов страницы")
+    @qase.step("Выполнить проверку всех тегов страницы")
     def send_application_region_tag(self):
         with allure.step("Проверка TAG_INTERNET_AND_MOBILE"):
             self.element_is_visible(TagPagelocators.TAG_INTERNET_AND_MOBILE).click()
@@ -44,6 +47,7 @@ class OneHundredMainPage(BasePage):
                 time.sleep(60)
 
     @allure.step("Заполнить адрес для города Воронеж")
+    @qase.step("Заполнить адрес для города Воронеж")
     def execute_actions_after_rates_click(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.element_is_visible(PopupFillTheAddress.POP_UP_FILLED_THE_STREET).send_keys('Полевая ул')
@@ -52,12 +56,14 @@ class OneHundredMainPage(BasePage):
         self.element_is_visible(PopupFillTheAddress.CLICK_ON_THE_HOUSE).click()
 
     @allure.step("Заполнить попап и выбрать тип соединения")
+    @qase.step("Заполнить попап и выбрать тип соединения")
     def choose_connection_type(self):
         self.element_is_visible(PopupFillTheAddress.POP_UP_CONNECTION_TYPE).click()
         self.element_is_visible(PopupFillTheAddress.POP_UP_SELECT_CONNECTION_TYPE).click()
         self.element_is_visible(PopupFillTheAddress.POP_UP_BUTTON_CHECK).click()
 
     @allure.step("Проверить текст попапа и отправить заявку")
+    @qase.step("Проверить текст попапа и отправить заявку")
     def voronezh_assert_text(self):
         text_in_pop_up = self.element_is_present(PopupSuccess.POP_UP_TEXT).text
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
@@ -77,6 +83,7 @@ class OneHundredMainPage(BasePage):
         self.driver.back()
 
     @allure.step("Заполнить адрес для города Москва")
+    @qase.step("Заполнить адрес для города Москва")
     def send_application_provider(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.element_is_visible(LocatorsForOtherPages.POP_UP_FILLED_THE_STREET).send_keys('Арбат ул')
@@ -85,6 +92,7 @@ class OneHundredMainPage(BasePage):
         self.element_is_visible(LocatorsForOtherPages.CLICK_ON_THE_HOUSE).click()
 
     @allure.step("Выполнить проверку тегов страницы")
+    @qase.step("Выполнить проверку тегов страницы")
     def new_application_provider(self):
         self.send_application_provider()
         self.choose_connection_type()
@@ -109,6 +117,7 @@ class OneHundredMainPage(BasePage):
                 # time.sleep(60)
 
     @allure.step("Проверить текст попапа и отправить заявку для города Москва")
+    @qase.step("Проверить текст попапа и отправить заявку для города Москва")
     def moscow_assert_text(self):
         text_in_pop_up = self.element_is_present(PopupSuccess.POP_UP_TEXT).text
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
@@ -127,6 +136,7 @@ class OneHundredMainPage(BasePage):
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Заполнить адрес для города Екатеринбург")
+    @qase.step("Заполнить адрес для города Екатеринбург")
     def send_application_provider_ekb(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.element_is_visible(LocatorsForOtherPages.POP_UP_FILLED_THE_STREET).send_keys('Гастелло ул')
@@ -135,6 +145,7 @@ class OneHundredMainPage(BasePage):
         self.element_is_visible(LocatorsForOtherPages.CLICK_ON_THE_HOUSE).click()
 
     @allure.step("Выполнить проверку тегов страницы")
+    @qase.step("Выполнить проверку тегов страницы")
     def new_application_provider_ekb(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.send_application_from_new_window()
@@ -147,8 +158,8 @@ class OneHundredMainPage(BasePage):
             # self.driver.back()
             time.sleep(60)
 
-
     @allure.step("Отправить заявку")
+    @qase.step("Отправить заявку")
     def send_application_from_new_window(self):
         # self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         # self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
@@ -167,6 +178,7 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
     @allure.step("Отправить заявку Воронеж")
+    @qase.step("Отправить заявку Воронеж")
     def send_application_from_new_window_vor(self):
         # self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         # self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
@@ -185,6 +197,7 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
     @allure.step("Написать название тарифа в консоль")
+    @qase.step("Написать название тарифа в консоль")
     def write_tariff_name(self):
         if self.element_is_visible(WriteTariffName.NAME_OF_TARIFF):
             name_element = self.element_is_visible(WriteTariffName.NAME_OF_TARIFF)
