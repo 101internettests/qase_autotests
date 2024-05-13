@@ -71,38 +71,38 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  download-history:
-    runs-on: ubuntu-latest
-    name: Download history
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Download artifacts
-        run: |
-          ARTIFACT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=_site" | jq -r '.artifacts[0].id')
-          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$ARTIFACT_ID/zip" -o artifacts.zip
-          REPORT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=github-pages" | jq -r '.artifacts[0].id')
-          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
-
-      - name: Unzip artifacts
-        run: |
-          mkdir -p allure-results
-          unzip -q artifacts.zip -d allure-results
-          mkdir -p old_pages pages_history
-          unzip -q pages.zip -d old_pages
-          tar -xf old_pages/artifact.tar -C pages_history
-
-      - name: Copy history to Allure results
-        run: |
-          cp -r pages_history/history/* allure-results
-          cp -r pages_history/history/ allure-results
-
-      - name: Store Allure history
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results
-          path: allure-results
-          retention-days: 2
+#  download-history:
+#    runs-on: ubuntu-latest
+#    name: Download history
+#    steps:
+#      - name: Set up Python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: '3.11'
+#
+#      - name: Download artifacts
+#        run: |
+#          ARTIFACT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=_site" | jq -r '.artifacts[0].id')
+#          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$ARTIFACT_ID/zip" -o artifacts.zip
+#          REPORT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=github-pages" | jq -r '.artifacts[0].id')
+#          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
+#
+#      - name: Unzip artifacts
+#        run: |
+#          mkdir -p allure-results
+#          unzip -q artifacts.zip -d allure-results
+#          mkdir -p old_pages pages_history
+#          unzip -q pages.zip -d old_pages
+#          tar -xf old_pages/artifact.tar -C pages_history
+#
+#      - name: Copy history to Allure results
+#        run: |
+#          cp -r pages_history/history/* allure-results
+#          cp -r pages_history/history/ allure-results
+#
+#      - name: Store Allure history
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: allure-results
+#          path: allure-results
+#          retention-days: 2
