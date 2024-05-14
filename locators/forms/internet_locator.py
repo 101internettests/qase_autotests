@@ -98,6 +98,7 @@ class WriteTariffName:
 
 class OneClickLocators:
     SCROLL_MAIN_PAGE = (By.XPATH, "(//h2[contains(text(), 'Топ провайдеров домашнего интернета в ')])[2]")
+    SCROLL_VOR = (By.XPATH, "(//h2[contains(text(), 'Наши партнеры в Воронеже')])[2]")
     SCROLL_FOR_POL = (By.XPATH, "(//h2[contains(text(), 'Топ провайдеров')])[2]")
     SCROLL_TOHOME_PAGE = (By.XPATH, "//h2[contains(text(), 'Интернет-провайдеры ')]")
     NUMBER_OF_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")

@@ -249,7 +249,7 @@ class FormsPage(BasePage):
     @allure.step("Скролл до формы 1 клик снизу страницы")
     @qase.step("Скролл до формы 1 клик снизу страницы")
     def scroll_to_form(self):
-        scroll = self.element_is_visible(OneClickLocators.SCROLL_MAIN_PAGE)
+        scroll = self.element_is_visible(OneClickLocators.SCROLL_VOR)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
 
