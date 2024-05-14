@@ -12,7 +12,7 @@ class TestMOLForms:
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/rates")
         forms_page.open()
         forms_page.fill_form_best_tariff()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка офисной заявки")
     @qase.title("Проверка офисной заявки МОЛ")
@@ -22,7 +22,7 @@ class TestMOLForms:
         forms_page.fill_office_tender()
         forms_page.fill_office_tender_address()
         forms_page.fill_the_application()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка попапа номера телефона")
     @qase.title("Проверка попапа номера телефона МОЛ")
@@ -32,7 +32,7 @@ class TestMOLForms:
         forms_page.change_region_moscow()
         forms_page.fill_address_on_main_page()
         forms_page.fill_popup_number()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка формы заявки 'адрес-тариф'")
     @qase.title("Проверка формы заявки 'адрес-тариф' МОЛ")
@@ -43,7 +43,7 @@ class TestMOLForms:
         forms_page.fill_address_on_main_page()
         forms_page.close_popup()
         forms_page.fill_connect_to_application()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка формы загородной заявки на МОЛ")
     @qase.title("Проверка формы загородной заявки на МОЛ")
@@ -53,7 +53,7 @@ class TestMOLForms:
         forms_page.change_region_moscow()
         forms_page.chose_button_internet_outtown_mol()
         forms_page.fill_connect_to_application_outtown()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер")
     @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер МОЛ")
@@ -67,7 +67,7 @@ class TestMOLForms:
         # forms_page.fill_address_in_addresspage()
         # time.sleep(2)
         # forms_page.fill_popup_number()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
     @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер МОЛ")
@@ -80,7 +80,7 @@ class TestMOLForms:
         forms_page.fill_the_address_provider_card()
         time.sleep(2)
         forms_page.fill_popup_number()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка реферальной ссылки с тарифа")
     @qase.title("Проверка реферальной ссылки с тарифа МОЛ")
@@ -101,7 +101,7 @@ class TestMOLForms:
         forms_page.open()
         forms_page.scroll_to_form()
         forms_page.one_click_main()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице отзывов")
     @qase.title("Проверка формы 1 клик на странице отзывов МОЛ")
@@ -109,7 +109,7 @@ class TestMOLForms:
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/reviews")
         forms_page.open()
         forms_page.one_click_review()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице поиска по адресу")
     @qase.title("Проверка формы 1 клик на странице поиска по адресу МОЛ")
@@ -118,5 +118,5 @@ class TestMOLForms:
         forms_page.open()
         forms_page.scroll_to_tohome()
         forms_page.one_click_main()
-        # time.sleep(60)
+        time.sleep(60)
 
