@@ -12,9 +12,9 @@ on:
       qase_project_code:
         description: 'Qase project code'
         required: true
-#      qase_run_id:
-#        description: 'Qase Run ID'
-#        required: true
+      qase_run_id:
+        description: 'Qase Run ID'
+        required: true
       qase_run_complete:
         description: 'Qase Run autocomplete'
         required: true
@@ -33,7 +33,7 @@ jobs:
   build-php:
     runs-on: ubuntu-latest
     steps:
-      - uses: qase-tms/qase-link-run@main
+#      - uses: qase-tms/qase-link-run@main
 
       - name: Checkout code
         uses: actions/checkout@v4.1.1
