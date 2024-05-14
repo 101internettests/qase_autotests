@@ -12,9 +12,9 @@ on:
       qase_project_code:
         description: 'Qase project code'
         required: true
-      qase_run_id:
-        description: 'Qase Run ID'
-        required: true
+#      qase_run_id:
+#        description: 'Qase Run ID'
+#        required: true
       qase_run_complete:
         description: 'Qase Run autocomplete'
         required: true
