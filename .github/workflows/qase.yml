@@ -28,7 +28,6 @@ env:
   QASE_PROJECT_CODE: INT
   QASE_RUN_COMPLETE: true
   QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }}
-  QASE_TESTOPS_RUN_TITLE: Тестовый запуск
 
 jobs:
   build-php:
