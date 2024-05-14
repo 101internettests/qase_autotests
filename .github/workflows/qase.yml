@@ -22,6 +22,7 @@ on:
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
   CHAT_ID: ${{ secrets.CHAT_ID }}
+  TOKEN: ${{ secrets.TOKEN }}
   HEADLESS: ${{ secrets.HEADLESS }}
   QASE_REPORT: 1
   QASE_PROJECT_CODE: INT
