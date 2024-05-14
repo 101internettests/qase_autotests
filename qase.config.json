@@ -13,8 +13,7 @@
 	"testops": {
 		"bulk": true,
 		"run": {
-			"complete": true,
-			"title": "Утренние автотесты"
+			"complete": true
 		},
 		"defect": false,
 		"project": "INT",
