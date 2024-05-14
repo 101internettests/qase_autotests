@@ -44,7 +44,7 @@ class ReviewPageRegion(BasePage):
         scroll = self.element_is_visible(ReviewMainPage.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
-        self.element_is_visible(ReviewMainPage.SCROLL).click()
+        self.element_is_visible(ReviewMainPage.LEAVE_FEEDBACK).click()
         time.sleep(3)
 
     @allure.step("Оставление отзыва на улице")
