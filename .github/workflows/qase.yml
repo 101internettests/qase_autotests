@@ -14,7 +14,7 @@ on:
         required: true
       qase_run_id:
         description: 'Qase Run ID'
-        required: true
+        required: 111
       qase_run_complete:
         description: 'Qase Run autocomplete'
         required: true
@@ -28,7 +28,6 @@ env:
   QASE_PROJECT_CODE: INT
   QASE_RUN_COMPLETE: true
   QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }}
-  QASE_RUN_ID: ${{ inputs.qase_run_id }}
 
 jobs:
   build-php:
