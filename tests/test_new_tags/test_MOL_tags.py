@@ -7,6 +7,7 @@ from qaseio.pytest import qase
 class TestMOLRatesTags:
     @allure.title("Москва - тарифы, теги: 'интернет и моб. связь', 'интернет и тв', 'дешевый интернет', '100мб/с'")
     @qase.title("Москва - тарифы, теги: 'интернет и моб. связь', 'интернет и тв', 'дешевый интернет', '100мб/с'")
+    @qase.id(352)
     def test_mol_tags(self, driver):
         tags = OneHundredMainPage(driver, "https://www.moskvaonline.ru/rates/internet-i-mobilnaya-svyaz")
         tags.open()
@@ -14,6 +15,7 @@ class TestMOLRatesTags:
 
     @allure.title("Москва - онлайм, теги: 'дешевый интернет', 'онлайн кинотеатр'")
     @qase.title("Москва - онлайм, теги: 'дешевый интернет', 'онлайн кинотеатр'")
+    @qase.id(353)
     def test_mol_onlime_tags(self, driver):
         tags = OneHundredMainPage(driver,
                                   "https://www.moskvaonline.ru/providers/onlime/rates/internet-i-mobilnaya-svyaz")

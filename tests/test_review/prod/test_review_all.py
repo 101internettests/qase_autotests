@@ -40,6 +40,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице региона")
     @qase.title("Отзыв оставлен на странице региона")
+    @qase.id(344)
     def test_random_review(self, driver):
         random_url = random.choice(urls)
         review = ReviewPageRegion(driver, random_url)
@@ -50,6 +51,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице улицы")
     @qase.title("Отзыв оставлен на странице улицы")
+    @qase.id(441)
     def test_101_rub_street(self, driver):
         random_url = random.choice(urls_street)
         review = ReviewPageRegion(driver, random_url)
@@ -60,6 +62,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице золотого дома")
     @qase.title("Отзыв оставлен на странице золотого дома")
+    @qase.id(442)
     def test_101_rub_house(self, driver):
         random_url = random.choice(urls_house)
         review = ReviewPageRegion(driver, random_url)
@@ -70,6 +73,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице оператора")
     @qase.title("Отзыв оставлен на странице оператора")
+    @qase.id(443)
     def test_101_rub_operator(self, driver):
         random_url = random.choice(urls_operator)
         review = ReviewPageRegion(driver, random_url)
@@ -79,6 +83,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе о провайдере")
     @qase.title("Отзыв оставлен на странице провайдера в разделе о провайдере")
+    @qase.id(345)
     def test_review_provider(self, driver):
         random_url = random.choice(urls_provider)
         review = ReviewPageProvider(driver, random_url)
@@ -89,6 +94,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе отзывы")
     @qase.title("Отзыв оставлен на странице провайдера в разделе отзывы")
+    @qase.id(346)
     def test_review_provider_feedback(self, driver):
         random_url = random.choice(urls_provider_feedback)
         review = ReviewPageProvider(driver, random_url)
@@ -100,6 +106,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на главной странице")
     @qase.title("Отзыв оставлен на главной странице")
+    @qase.id(347)
     def test_review_main_page(self, driver):
         random_url = random.choice(urls_main_page)
         review = ReviewPageRegion(driver, random_url)
@@ -110,6 +117,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице офиса")
     @qase.title("Отзыв оставлен на странице офиса")
+    @qase.id(348)
     def test_review_office(self, driver):
         random_url = random.choice(urls_office)
         review = ReviewPageRegion(driver, random_url)
@@ -120,6 +128,7 @@ class Test101Review:
 
     @allure.title("Отзыв оставлен на странице загородной заявки")
     @qase.title("Отзыв оставлен на странице загородной заявки")
+    @qase.id(349)
     def test_review_dacha(self, driver):
         random_url = random.choice(urls_dacha)
         review = ReviewPageRegion(driver, random_url)

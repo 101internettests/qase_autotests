@@ -7,6 +7,7 @@ from qaseio.pytest import qase
 class TestOneHundredInternetTags:
     @allure.title("Воронеж - тарифы, теги: 'интернет и моб. связь', 'интернет и тв и моб. связь', 'домашний интернет'")
     @qase.title("Воронеж - тарифы, теги: 'интернет и моб. связь', 'интернет и тв и моб. связь', 'домашний интернет' 101")
+    @qase.id(350)
     def test_voronezh_tags(self, driver):
         tags = OneHundredMainPage(driver, "https://101internet.ru/voronezh")
         tags.open()
@@ -20,6 +21,7 @@ class TestOneHundredInternetTags:
 
     @allure.title("Екатеринбург - ростелеком, теги: 'интернет и моб. связь'")
     @qase.title("Екатеринбург - ростелеком, теги: 'интернет и моб. связь'")
+    @qase.id(351)
     def test_ekb_rostelecom_tags(self, driver):
         tags = OneHundredMainPage(driver,
                                   "https://101internet.ru/ekaterinburg/providers/rostelecom/rates/internet-i-mobilnaya-svyaz")
