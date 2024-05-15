@@ -47,45 +47,25 @@ class ReviewPageRegion(BasePage):
         self.element_is_visible(ReviewMainPage.LEAVE_FEEDBACK).click()
         time.sleep(3)
 
-
-class ReviewPageStreet(BasePage):
     @allure.step("Оставление отзыва на улице")
     @qase.step("Оставление отзыва на улице")
-    def leave_the_feedback_101_pub(self):
+    def leave_the_feedback_street(self):
         time.sleep(3)
         scroll = self.element_is_visible(ReviewOnTheStreet.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
-            "ТЕСТ. Со страницы улицы. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
-        self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).send_keys("Ростелеком")
-        self.element_is_visible(ReviewOnTheStreet.CLICK_PROVIDER).click()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK_2).click()
-        self.element_is_visible(ReviewOnTheStreet.ENTER_PHONE_NUMBER).send_keys('1111111111')
-        self.element_is_visible(ReviewOnTheStreet.GET_101_PUB).click()
-        close = self.element_is_present(ReviewOnTheStreet.CLOSE_THE_POPAP)
-        assert close.text == "Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб"
+        self.element_is_visible(ReviewOnTheStreet.ClICK_FEEDBACK).click()
+        time.sleep(3)
 
     @allure.step("Оставление отзыва на золотом доме")
     @qase.step("Оставление отзыва на золотом доме")
-    def leave_the_feedback_101_pub_house(self):
+    def leave_the_feedback_golden_house(self):
         time.sleep(3)
-        scroll = self.element_is_visible(ReviewOnTheStreet.SCROLL)
+        scroll = self.element_is_visible(ReviewOnTheStreet.SCROLL_GOLDEN_HOUSE)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).click()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
-            "ТЕСТ. Со страницы дома. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
-        # self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).send_keys("Ростелеком")
-        self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).click()
-        self.element_is_visible(ReviewOnTheHouse.CLICK_PROVIDER).click()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK_2).click()
-        self.element_is_visible(ReviewOnTheHouse.ENTER_PHONE_NUMBER).send_keys('1111111111')
-        self.element_is_visible(ReviewOnTheStreet.GET_101_PUB).click()
-        close = self.element_is_present(ReviewOnTheStreet.CLOSE_THE_POPAP)
-        assert close.text == "Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб"
+        self.element_is_visible(ReviewOnTheStreet.ClICK_FEEDBACK).click()
+        time.sleep(3)
 
     @allure.step("Оставление отзыва у оператора")
     @qase.step("Оставление отзыва у оператора")

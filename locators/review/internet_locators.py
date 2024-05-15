@@ -18,17 +18,12 @@ class ReviewForRegion:
 
 
 class ReviewOnTheStreet:
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Начать')]")
-    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style='height: 95.6px;']")
+    SCROLL = (By.XPATH, "//div[contains(text(), 'Проверить')]")
+    SCROLL_GOLDEN_HOUSE = (By.XPATH, "//h2[contains(text(), 'Частые вопросы')]")
+    ClICK_FEEDBACK = (By.XPATH, "//a[contains(text(), 'Оставить отзыв')]")
+    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@aria-label='Написать отзыв']")
     LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
-    CHOOCE_PRIVIDER = (By.XPATH, "//span[contains(text(), 'Провайдер')]/following-sibling::input")
-    # CHOOSE_ROSTELECOM = (By.XPATH, "(//input[@maxlength='500'])[3]")
-    CLICK_PROVIDER = (By.XPATH, "//div[@id='forSelectField']//li[contains(text(), 'Ростелеком')]")
     LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
-    ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
-    GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
-    CLOSE_THE_POPAP = (
-    By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
 
 
 class ReviewOnTheHouse:
