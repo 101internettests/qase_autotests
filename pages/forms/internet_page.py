@@ -174,6 +174,7 @@ class FormsPage(BasePage):
     @allure.step("Заполнить адрес через кнопку 'проверить адрес' вариант 2")
     @qase.step("Заполнить адрес через кнопку 'проверить адрес' вариант 2")
     def fill_address_in_addresspage_second(self):
+        time.sleep(3)
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FOR_CONNECTION).click()
         time.sleep(3)
 
