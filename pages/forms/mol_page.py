@@ -258,7 +258,7 @@ class FormsPage(BasePage):
     @allure.step("Скролл до формы 1 клик на странице поиска по адресу")
     @qase.step("Скролл до формы 1 клик на странице поиска по адресу")
     def scroll_to_tohome(self):
-        scroll = self.element_is_visible(OneClickLocators.SCROLL_TOHOME_PAGE)
+        scroll = self.element_is_visible(OneClickLocators.SCROLL_TOHOME_PAGEM)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
 
