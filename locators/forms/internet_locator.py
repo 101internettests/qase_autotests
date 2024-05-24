@@ -84,7 +84,7 @@ class NonPartnerCardRecCon:
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
 
 class ReferralUrlTariff:
-    CHOSE_ABK_WELCOME = (By.XPATH, "//div[contains(text(), 'АВК-Веллком')]")
+    CHOSE_ABK_WELCOME = (By.XPATH, "(//div[contains(text(), 'АВК-Веллком')])[2]")
     CLICK_ON_PIC_AVK_WELCOME = (By.XPATH, "//img[@alt='АВК-Веллком']")
     CONNECT_BUTTON = (By.XPATH, f"(//span[contains(text(), 'Подключить')])[{randint(3, 5)}]")
     SCROLL = (By.XPATH, "(//a[contains(text(), 'Все тарифы')])[3]")

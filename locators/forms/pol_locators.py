@@ -46,7 +46,7 @@ class NonPartnerPOL:
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
 
 class ReferralUrlTariffPOL:
-    CHOSE_PACT = (By.XPATH, "//div[contains(text(), 'ПАКТ')]")
+    CHOSE_PACT = (By.XPATH, "(//div[contains(text(), 'ПАКТ')])[2]")
     CLICK_ON_PIC_PACT = (By.XPATH, "//img[@alt='ПАКТ']")
     SCROLL = (By.XPATH, "(//a[contains(text(), 'Все тарифы')])[3]")
     CONNECT_BUTTON = (By.XPATH, f"(//div[@datatest='providers_form_inspect_connect_tariff_button'])[{randint(2, 3)}]")

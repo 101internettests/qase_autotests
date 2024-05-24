@@ -12,7 +12,7 @@ class TestInternetForms:
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
         forms_page.change_region_on_msk()
-        forms_page.chose_tariffs_button()
+        forms_page.chose_providers_burger_button()
         forms_page.fill_form_best_tariff()
         time.sleep(60)
 
@@ -81,7 +81,7 @@ class TestInternetForms:
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
         forms_page.change_region_moscow()
-        forms_page.chose_providers_burger_button()
+        forms_page.chose_tariffs_button()
         forms_page.chose_mosnet_provider()
         forms_page.fill_the_address_provider_card()
         time.sleep(2)
@@ -95,7 +95,7 @@ class TestInternetForms:
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
         forms_page.change_region_on_msk()
-        forms_page.chose_providers_burger_button()
+        forms_page.chose_tariffs_button()
         forms_page.chose_abk_provider()
         forms_page.check_redirect()
         target_url = 'https://avk-wellcom.ru/zayavka-na-podklyuchenie.html'
