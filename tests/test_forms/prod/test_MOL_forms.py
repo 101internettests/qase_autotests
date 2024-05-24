@@ -10,7 +10,7 @@ class TestMOLForms:
     @qase.title("Проверка формы 'жду звонка' МОЛ")
     @qase.id(367)
     def test_wait_call_mol_form(self, driver):
-        forms_page = FormsPage(driver, "https://www.moskvaonline.ru/rates")
+        forms_page = FormsPage(driver, "https://www.moskvaonline.ru/providers")
         forms_page.open()
         forms_page.fill_form_best_tariff()
         time.sleep(60)
@@ -82,7 +82,7 @@ class TestMOLForms:
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
         forms_page.change_region_moscow()
-        forms_page.chose_providers_burger_button()
+        forms_page.chose_tariffs_button()
         forms_page.chose_mosnet_provider()
         forms_page.fill_the_address_provider_card()
         time.sleep(2)
@@ -96,7 +96,7 @@ class TestMOLForms:
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
         forms_page.change_region_moscow()
-        forms_page.chose_providers_burger_button()
+        forms_page.chose_tariffs_button()
         forms_page.chose_abk_provider()
         forms_page.check_redirect()
         target_url = 'https://avk-wellcom.ru/zayavka-na-podklyuchenie.html'

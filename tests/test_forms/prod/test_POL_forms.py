@@ -13,7 +13,7 @@ class TestPOLForms:
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
         forms_page.change_region_on_spb()
-        forms_page.chose_tariffs_button()
+        forms_page.chose_providers_burger_button()
         forms_page.fill_form_best_tariff()
         time.sleep(60)
 
@@ -84,7 +84,7 @@ class TestPOLForms:
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
         forms_page.change_region_on_spb()
-        forms_page.chose_providers_burger_button()
+        forms_page.chose_tariffs_button()
         forms_page.chose_mosnet_provider()
         forms_page.fill_the_address_provider_card()
         time.sleep(2)
@@ -98,7 +98,7 @@ class TestPOLForms:
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
         forms_page.change_region_on_spb()
-        forms_page.chose_providers_burger_button()
+        forms_page.chose_tariffs_button()
         forms_page.chose_pact_provider()
         forms_page.check_redirect_pol()
         target_url = 'https://pakt.ru/diler/piteronline.html'

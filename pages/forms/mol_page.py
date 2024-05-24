@@ -177,6 +177,11 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.PROVIDERS_BUTTON).click()
         time.sleep(3)
 
+    @allure.step("Выбрать тарифы в хедере")
+    @qase.step("Выбрать тарифы в хедере")
+    def chose_tariffs_button(self):
+        self.element_is_visible(WaitCallLocators.TARIFFS_BUTTON).click()
+
     @allure.step("Выбрать в фильтрах 'Моснет'")
     @qase.step("Выбрать в фильтрах 'Моснет'")
     def chose_mosnet_provider(self):
