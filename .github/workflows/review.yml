@@ -1,4 +1,4 @@
-name: qase tests
+name: review
 
 on:
   workflow_call:
