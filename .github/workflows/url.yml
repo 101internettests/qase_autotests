@@ -1,4 +1,4 @@
-name: qase tests
+name: url
 
 on:
   workflow_call:

@@ -1,4 +1,4 @@
-name: qase tests
+name: tags
 
 on:
   workflow_call:

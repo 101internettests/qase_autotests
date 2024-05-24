@@ -1,4 +1,4 @@
-name: qase tests
+name: forms
 
 on:
   workflow_call:
