@@ -53,5 +53,5 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: tests
-        run: pytest tests/test_new_tags/prod
+        run: pytest tests/test_new_tags/
         continue-on-error: true
