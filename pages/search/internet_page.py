@@ -34,21 +34,30 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHOOSE_CHB_REGION).click()
         time.sleep(1)
 
+    @allure.step("скролл до пангинации")
+    def scroll(self):
+        scroll_element = self.element_is_visible(CoverageMap.SCROLL)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
+
+
     @allure.step("Пангинация на странице дома")
     def pangination(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMap.PANGINATION_3):
+            self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMap.PANGINATION_4):
+            self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             self.check_the_buttons()
@@ -79,6 +88,7 @@ class CheckTheCoverageMap(BasePage):
                 assert self.element_is_present(CoverageMap.TEXT_MOBILE)
             elif num_elements > 2:
                 pass
+        self.element_is_visible(CoverageMap.CLICK_ALL).click()
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
@@ -88,12 +98,11 @@ class CheckTheCoverageMap(BasePage):
 
     @allure.step("Проверка кнопок подключить")
     def check_the_buttons(self):
-        scroll = self.element_is_visible(CoverageMap.SCROLL)
-        actions = ActionChains(self.driver)
-        actions.move_to_element(scroll).perform()
-        time.sleep(2)
+        # scroll = self.element_is_present(CoverageMap.SCROLL)
+        # actions = ActionChains(self.driver)
+        # actions.move_to_element(scroll).perform()
+        # time.sleep(2)
         elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
-        time.sleep(10)
         num_elements = len(elements)
         time.sleep(10)
         print(num_elements)
