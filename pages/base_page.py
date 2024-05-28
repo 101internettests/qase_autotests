@@ -59,3 +59,5 @@ class BasePage:
 
     def switch_back_handles_window(self):
         self.driver.switch_to.window(self.driver.window_handles[0])
+
+

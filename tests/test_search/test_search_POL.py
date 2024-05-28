@@ -1,5 +1,7 @@
 from pages.search.pol_page import CheckPage404, CheckTheCoverageMapPol
 import allure
+
+
 # from qaseio.pytest import qase
 
 @allure.suite("Тесты поиск на ПОЛ")

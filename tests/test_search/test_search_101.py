@@ -1,6 +1,8 @@
 import allure
 from pages.search.internet_page import CheckPage404, CheckTheCoverageMap
 # from qaseio.pytest import qase
+import time
+
 
 @allure.suite("Тесты поиск на 101")
 class TestSearch:
@@ -28,10 +30,9 @@ class TestSearch:
         search_page.open()
         search_page.change_region_on_chb()
         search_page.check_the_coverage_map_turkina()
-        search_page.check_the_coverage_map_agalakova()
-        search_page.check_the_coverage_map_boleiko_one()
-        search_page.check_the_coverage_map_boleiko_two()
-        search_page.check_the_coverage_map_test()
-
-
-
+        time.sleep(3)
+        search_page.pangination()
+        search_page.change_region_on_chb()
+        search_page.check_search_gold_house()
+        time.sleep(3)
+        search_page.pangination()

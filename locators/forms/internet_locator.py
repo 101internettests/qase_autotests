@@ -25,6 +25,7 @@ class OfficeOrder:
     BUTTON_SEND_ORDER = (By.XPATH, "(//div[contains(text(), 'Отправить заявку')])[1]")
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[1]")
 
+
 class PopUpPhoneNub:
     CHOOSE_MOSCOW = (By.XPATH, "(//a[contains(text(), 'Москва')])[1]")
     BUTTON_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
@@ -70,6 +71,7 @@ class RecentlyConnectionTariffs:
     CHECK_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Проверить')])[2]")
     BUTTON_FOR_CONNECTION = (By.XPATH, "(//span[contains(text(), 'Подключить')])[3]")
 
+
 class NonPartnerCardRecCon:
     PROVIDERS_BUTTON = (By.XPATH, "(//a[contains(text(), 'провайдеры')])[1]")
     CHOSE_PROVIDER_FILTER = (By.XPATH, "//input[@datatest='providers_provider_input_filter']")
@@ -82,6 +84,7 @@ class NonPartnerCardRecCon:
     CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
+
 
 class ReferralUrlTariff:
     CHOSE_ABK_WELCOME = (By.XPATH, "(//div[contains(text(), 'АВК-Веллком')])[2]")

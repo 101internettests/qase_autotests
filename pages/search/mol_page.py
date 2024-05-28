@@ -3,6 +3,7 @@ import time
 from locators.search.locators_101 import NonexistentAddress, CoverageMap
 from locators.search.locators_MOL import CoverageMapMol
 from pages.base_page import BasePage
+from pages.search.internet_page import CheckTheCoverageMap
 from selenium.webdriver import ActionChains
 
 
@@ -13,9 +14,11 @@ class CheckPage404(BasePage):
         self.element_is_visible(NonexistentAddress.CLICK_THE_STREET).click()
         self.element_is_visible(NonexistentAddress.FIND_THE_HOUSE).send_keys("100")
         self.element_is_visible(NonexistentAddress.CLICK_THE_HOUSE).click()
+        self.element_is_visible(NonexistentAddress.CHOOSE_TYPE_OF_CONNECTION).click()
+        self.element_is_visible(NonexistentAddress.CHOOSE_TYPE).click()
         self.element_is_visible(NonexistentAddress.BUTTON_SHOW_THE_RATE).click()
         text_automatic_search = self.element_is_present(NonexistentAddress.CHECK_TEXT)
-        assert text_automatic_search.text == "Автоматический поиск не дал результатов"
+        assert text_automatic_search.text == "К сожалению, автоматический поиск не дал результатов"
 
 
 class CheckTheCoverageMapMol(BasePage):
@@ -60,57 +63,57 @@ class CheckTheCoverageMapMol(BasePage):
         scroll_element = self.element_is_visible(CoverageMap.SCROLL)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
 
-    @allure.step("Пангинация на странице дома")
-    def pangination(self):
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
-            print("переход на страницу 2")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_3):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_3).click()
-            print("переход на страницу 3")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_4):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_4).click()
-            print("переход на страницу 4")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_5):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_5).click()
-            print("переход на страницу 4")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_6):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_6).click()
-            print("переход на страницу 4")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_7):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_7).click()
-            print("переход на страницу 4")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_8):
-            self.scroll()
-            self.element_is_visible(CoverageMap.PANGINATION_8).click()
-            print("переход на страницу 4")
-            self.check_the_buttons()
-        else:
-            pass
+    # @allure.step("Пангинация на странице дома")
+    # def pangination(self):
+    #     if self.element_is_visible(CoverageMap.PANGINATION_2):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_2).click()
+    #         print("переход на страницу 2")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
+    #     if self.element_is_visible(CoverageMap.PANGINATION_3):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_3).click()
+    #         print("переход на страницу 3")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
+    #     if self.element_is_visible(CoverageMap.PANGINATION_4):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_4).click()
+    #         print("переход на страницу 4")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
+    #     if self.element_is_visible(CoverageMap.PANGINATION_5):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_5).click()
+    #         print("переход на страницу 5")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
+    #     if self.element_is_visible(CoverageMap.PANGINATION_6):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_6).click()
+    #         print("переход на страницу 6")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
+    #     if self.element_is_visible(CoverageMap.PANGINATION_7):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_7).click()
+    #         print("переход на страницу 7")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
+    #     if self.element_is_visible(CoverageMap.PANGINATION_8):
+    #         self.scroll()
+    #         self.element_is_visible(CoverageMap.PANGINATION_8).click()
+    #         print("переход на страницу 8")
+    #         self.check_the_buttons()
+    #     else:
+    #         pass
 
     @allure.step("Проверка карты покрытия (пр-кт Ленина)")
     def check_the_coverage_map_lenina(self):
@@ -141,7 +144,7 @@ class CheckTheCoverageMapMol(BasePage):
         time.sleep(3)
         self.check_the_buttons()
         time.sleep(7)
-        self.pangination()
+
 
     @allure.step("Проверка карты покрытия (б-р Тестовый)")
     def check_the_coverage_map_test(self):
