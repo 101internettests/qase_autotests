@@ -56,3 +56,4 @@ class GOLDEN_HOUSE:
     TEXT_MOBILE = (By.XPATH,"//h2[contains(text(), 'Мобильный интернет со скоростью до 100 Мбит/с и возможностью раздачи через роутер')]")
     LINKING = (By.XPATH, "//h2[contains(text(), 'Другие адреса в Челябинске')]")
 
+

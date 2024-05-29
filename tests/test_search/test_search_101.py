@@ -30,9 +30,14 @@ class TestSearch:
         search_page.open()
         search_page.change_region_on_chb()
         search_page.check_the_coverage_map_turkina()
+        search_page.check_the_buttons()
         time.sleep(3)
         search_page.pangination()
         search_page.change_region_on_chb()
         search_page.check_search_gold_house()
+        search_page.check_the_buttons()
         time.sleep(3)
         search_page.pangination()
+
+
+
