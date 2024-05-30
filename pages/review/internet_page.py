@@ -74,12 +74,16 @@ class ReviewPageRegion(BasePage):
         scroll = self.element_is_visible(ReviewOperator.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
+        self.element_is_visible(ReviewOperator.LEAVE_FEEDBACK).send_keys(
             "ТЕСТ. Со страницы оператора. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
+        time.sleep(3)
         self.element_is_visible(ReviewOperator.CHOOCE_OPERATOR).click()
+        time.sleep(3)
         self.element_is_visible(ReviewOperator.CLICK_OPERATOR).click()
-        self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK_2).click()
+        time.sleep(3)
+        self.element_is_visible(ReviewOperator.LEAVE_FEEDBACK_2).click()
+        time.sleep(3)
         close = self.element_is_present(ReviewOperator.CLOSE_THE_POPAP)
         assert close.text == "Спасибо за отзыв!"
 

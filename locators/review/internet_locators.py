@@ -12,18 +12,18 @@ class ReviewForRegion:
     CHOOSE_SERVISE = (By.XPATH, "//div[contains(text(), 'Интернет и ТВ')]")
     CLICK_RATING = (By.XPATH, "(//div[@datatest='feedback_rating_button']/div/div/span)[1]")
     ENTER_FEEDBACK = (By.XPATH, "//textarea[@datatest='feedback_comment']")
-    LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
-    CLICK_ANONIM = (By.XPATH, "//div[contains(text(), 'Анонимно')]")
+    LEAVE_FEEDBACK_2 = (By.XPATH, "//button[@datatest='feedback_next_button']")
+    CLICK_ANONIM = (By.XPATH, "//button[@aria-label='Анонимно']")
     SUCCESS_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
 
 
 class ReviewOnTheStreet:
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Проверить')]")
+    SCROLL = (By.XPATH, "//button[@data-test='providers_button_verify']")
     SCROLL_GOLDEN_HOUSE = (By.XPATH, "//h2[contains(text(), 'Частые вопросы')]")
     ClICK_FEEDBACK = (By.XPATH, "//a[contains(text(), 'Оставить отзыв')]")
-    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@aria-label='Написать отзыв']")
+    # LEAVE_FEEDBACK_2 = (By.XPATH, "//textarea[@aria-label='Написать отзыв']")
     LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
-    LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
+    LEAVE_FEEDBACK = (By.XPATH, "//a[contains(text(), 'Оставить отзыв')]")
 
 
 class ReviewOnTheHouse:
@@ -37,6 +37,8 @@ class ReviewOperator:
     CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
     CLICK_OPERATOR = (By.XPATH, "//li[contains(text(), 'МТС')]")
     CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
+    LEAVE_FEEDBACK_2 = (By.XPATH, "//button[@aria-label='Отправить отзыв']")
+
 
 
 class ReviewProvider:
