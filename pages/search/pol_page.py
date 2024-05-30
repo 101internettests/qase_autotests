@@ -3,6 +3,7 @@ import time
 from locators.search.locators_101 import NonexistentAddress, CoverageMap
 from locators.search.locators_POL import CoverageMapPol
 from pages.base_page import BasePage
+from pages.search.internet_page import CheckTheCoverageMap
 from selenium.webdriver import ActionChains
 
 
@@ -13,9 +14,11 @@ class CheckPage404(BasePage):
         self.element_is_visible(NonexistentAddress.CLICK_THE_STREET).click()
         self.element_is_visible(NonexistentAddress.FIND_THE_HOUSE).send_keys("100")
         self.element_is_visible(NonexistentAddress.CLICK_THE_HOUSE).click()
+        self.element_is_visible(NonexistentAddress.CHOOSE_TYPE_OF_CONNECTION).click()
+        self.element_is_visible(NonexistentAddress.CHOOSE_TYPE).click()
         self.element_is_visible(NonexistentAddress.BUTTON_SHOW_THE_RATE).click()
         text_automatic_search = self.element_is_present(NonexistentAddress.CHECK_TEXT)
-        assert text_automatic_search.text == "Автоматический поиск не дал результатов"
+        assert text_automatic_search.text == "К сожалению, автоматический поиск не дал результатов"
 
 
 class CheckTheCoverageMapPol(BasePage):
@@ -39,81 +42,74 @@ class CheckTheCoverageMapPol(BasePage):
 
     @allure.step("Проверка кнопок подключить")
     def check_the_buttons(self):
-        scroll = self.element_is_visible(CoverageMapPol.SCROLL)
-        actions = ActionChains(self.driver)
-        actions.move_to_element(scroll).perform()
-        time.sleep(2)
         elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
         time.sleep(10)
         num_elements = len(elements)
         time.sleep(10)
         print(num_elements)
         compare = self.elements_are_present(CoverageMap.COMPARE)
-        time.sleep(10)
+        time.sleep(15)
         num_compare = len(compare)
-        time.sleep(10)
+        time.sleep(15)
         print(num_compare)
         if num_elements >= num_compare:
             print("все ок")
         else:
             print("проверь кнопки подключения")
 
-    @allure.step("Пангинация на странице дома в СПБ")
-    def pangination(self):
-        if self.element_is_visible(CoverageMapPol.PANGINATION_2):
-            self.element_is_visible(CoverageMapPol.PANGINATION_2).click()
-            print("переход на страницу 2")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_3):
-            self.element_is_visible(CoverageMapPol.PANGINATION_3).click()
-            print("переход на страницу 3")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_4):
-            self.element_is_visible(CoverageMapPol.PANGINATION_4).click()
-            print("переход на страницу 4")
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_5):
-            self.element_is_visible(CoverageMapPol.PANGINATION_5).click()
-            print("переход на страницу 5")
-            self.check_the_buttons()
-        else:
-            pass
+    @allure.step("скролл до пангинации")
+    def scroll(self):
+        scroll_element = self.element_is_visible(CoverageMap.SCROLL)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
 
-    @allure.step("Пангинация на странице дома в ЛО")
-    def pangination_obl(self):
-        if self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL):
-            self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL).click()
+    @allure.step("Пангинация на странице дома")
+    def pangination(self):
+        if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             self.check_the_buttons()
         else:
             pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_3_OBL):
-            self.element_is_visible(CoverageMapPol.PANGINATION_3_OBL).click()
+        if self.element_is_visible(CoverageMap.PANGINATION_3):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             self.check_the_buttons()
         else:
             pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_4_OBL):
-            self.element_is_visible(CoverageMapPol.PANGINATION_4_OBL).click()
+        if self.element_is_visible(CoverageMap.PANGINATION_4):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             self.check_the_buttons()
         else:
             pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_5_OBL):
-            self.element_is_visible(CoverageMapPol.PANGINATION_5_OBL).click()
+        if self.element_is_visible(CoverageMap.PANGINATION_5):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             self.check_the_buttons()
         else:
             pass
-        if self.element_is_visible(CoverageMapPol.PANGINATION_6_OBL):
-            self.element_is_visible(CoverageMapPol.PANGINATION_6_OBL).click()
+        if self.element_is_visible(CoverageMap.PANGINATION_6):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_7):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_7).click()
+            print("переход на страницу 7")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_8):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_8).click()
+            print("переход на страницу 8")
             self.check_the_buttons()
         else:
             pass
