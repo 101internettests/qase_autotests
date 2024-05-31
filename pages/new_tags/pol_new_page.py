@@ -16,7 +16,7 @@ class OneHundredMainPage(BasePage):
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
             self.send_application_from_new_window()
             # self.driver.back()
-            # time.sleep(60)
+            time.sleep(60)
         tags_to_check = [
             Tagpagelocators.TAG_300_MB,
             Tagpagelocators.TAG_500_MB,
@@ -100,7 +100,7 @@ class OneHundredMainPage(BasePage):
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
             self.send_application_from_new_window_new()
             # self.driver.back()
-            # time.sleep(60)
+            time.sleep(60)
         new_new_tags = [Tagpagelocators.TAG_HOME_INTERNET,
                         Tagpagelocators.TAG_INTERNET_TV]
         for new_tag in new_new_tags:
@@ -109,7 +109,7 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
                 self.send_application_from_new_window_new()
                 # self.driver.back()
-                # time.sleep(60)
+                time.sleep(60)
 
     @allure.step("Отправить заявку")
     @qase.step("Отправить заявку")

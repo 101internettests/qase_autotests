@@ -187,6 +187,7 @@ class OneHundredMainPage(BasePage):
             else:
                 self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_THRID).click()
+                time.sleep(2)
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
     @allure.step("Отправить заявку")
