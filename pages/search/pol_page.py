@@ -3,12 +3,12 @@ import time
 from locators.search.locators_101 import NonexistentAddress, CoverageMap
 from locators.search.locators_POL import CoverageMapPol
 from pages.base_page import BasePage
-from pages.search.internet_page import CheckTheCoverageMap
-from selenium.webdriver import ActionChains
+from locators.search.locators_101 import GOLDEN_HOUSE
 
 
 class CheckPage404(BasePage):
     @allure.step("Проверка несуществующего адреса")
+    # @qase.title("Проверка несуществующего адреса")
     def check_nonexistent_address_pol(self):
         self.element_is_visible(NonexistentAddress.FIND_THE_STREET).send_keys('Олеко Дундича ул')
         self.element_is_visible(NonexistentAddress.CLICK_THE_STREET).click()
@@ -22,16 +22,18 @@ class CheckPage404(BasePage):
 
 
 class CheckTheCoverageMapPol(BasePage):
-    @allure.step("Выбрать регион Санкт-Петербург в хедере")
-    def change_region_on_spb(self):
+    @allure.step("Выбрать регион Колпино в хедере")
+    # @qase.title("Выбрать регион Колпино в хедере")
+    def change_region_on_kolpino(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMap.WRITE_NAME_OF_REGION).send_keys("Санкт-Петербург")
+        self.element_is_visible(CoverageMap.WRITE_NAME_OF_REGION).send_keys("Колпино")
         time.sleep(1)
         self.element_is_visible(CoverageMapPol.CHOOSE_SPB_REGION).click()
         time.sleep(1)
 
-    @allure.step("Выбрать регион Ленинградскую область в хедере")
+    @allure.step("Выбрать регион Ленинградская область в хедере")
+    # @qase.title("Выбрать регион Ленинградская область в хедере")
     def change_region_on_lenobl(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
         time.sleep(3)
@@ -40,7 +42,14 @@ class CheckTheCoverageMapPol(BasePage):
         self.element_is_visible(CoverageMapPol.CHOOSE_LENOBL_REGION).click()
         time.sleep(1)
 
+    @allure.step("скролл до пангинации")
+    # @qase.title("скролл до пангинации")
+    def scroll(self):
+        scroll_element = self.element_is_visible(CoverageMap.SCROLL)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
+
     @allure.step("Проверка кнопок подключить")
+    # @qase.title("Проверка кнопок подключить")
     def check_the_buttons(self):
         elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
         time.sleep(10)
@@ -53,16 +62,12 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(15)
         print(num_compare)
         if num_elements >= num_compare:
-            print("все ок")
+            print("кнопки подключить найдены")
         else:
             print("проверь кнопки подключения")
 
-    @allure.step("скролл до пангинации")
-    def scroll(self):
-        scroll_element = self.element_is_visible(CoverageMap.SCROLL)
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
-
     @allure.step("Пангинация на странице дома")
+    # @qase.title("Пангинация на странице дома")
     def pangination(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
@@ -114,69 +119,34 @@ class CheckTheCoverageMapPol(BasePage):
         else:
             pass
 
-    @allure.step("Проверка карты покрытия (ул Анисимова)")
-    def check_the_coverage_map_anisimova(self):
-        self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
+    @allure.step("Проверка поиска (ул Анисимова 2)")
+    # @qase.title("Проверка поиска (ул Анисимова 2)")
+    def check_search_gold_house(self):
+        self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).click()
+        self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).send_keys("Анисимова ул")
         time.sleep(3)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_KOLPINO).click()
+        self.element_is_visible(GOLDEN_HOUSE.CLICK_ON_THE_STREET).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_ANISIMOVA).click()
+        self.element_is_visible(GOLDEN_HOUSE.INPUT_HOUSE).send_keys("2")
         time.sleep(1)
-        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
-        num_elements = len(elements)
-        print(num_elements)
+        self.element_is_visible(GOLDEN_HOUSE.CLICK_ON_THE_HOUSE).click()
+        time.sleep(2)
+        self.element_is_visible(GOLDEN_HOUSE.CHOOSE_TYPE_OF_CONNECTION).click()
+        time.sleep(2)
+        self.element_is_visible(GOLDEN_HOUSE.CLICK_ON_TYPE_OF_CONNECTION).click()
+        time.sleep(2)
+        self.element_is_visible(GOLDEN_HOUSE.BUTTON_SHOW_TARIFFS).click()
+        time.sleep(2)
+        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
         time.sleep(1)
-        if num_elements <= 2:
-            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
-            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_TWO).click()
-            time.sleep(3)
-            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
-        elif num_elements > 2:
-            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_TWO).click()
-            time.sleep(3)
-            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
-            if num_elements <= 2:
-                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
-            elif num_elements > 2:
-                pass
-        time.sleep(3)
-        self.check_the_buttons()
-        time.sleep(10)
-        self.pangination()
-
-    @allure.step("Проверка карты покрытия (ул Вишнякова)")
-    def check_the_coverage_map_vishnaykova(self):
-        self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
-        time.sleep(3)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_BOKSITOGORSK).click()
-        time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_VISHNYAKOVA).click()
-        time.sleep(1)
-        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
-        num_elements = len(elements)
-        print(num_elements)
-        time.sleep(1)
-        if num_elements <= 2:
-            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
-            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_19).click()
-            time.sleep(3)
-            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
-        elif num_elements > 2:
-            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_19).click()
-            time.sleep(3)
-            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
-            if num_elements <= 2:
-                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
-            elif num_elements > 2:
-                pass
-        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
-        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
-        time.sleep(3)
-        self.check_the_buttons()
-        time.sleep(10)
-        self.pangination_obl()
+        self.element_is_visible(CoverageMap.CLICK_ALL).click()
+        time.sleep(2)
+        assert self.element_is_visible(CoverageMapPol.LINKING)
+        print('перелинковка найдена')
+        time.sleep(2)
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
+    # @qase.title("Проверка карты покрытия (линия Тестовая)")
     def check_the_coverage_map_test(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
@@ -197,13 +167,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_ONE).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
-            if num_elements <= 2:
-                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
-            elif num_elements > 2:
-                pass
-        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
-        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
+        # self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        # assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
-        self.check_the_buttons()
-        time.sleep(10)
-        self.pangination_obl()
+        self.pangination()

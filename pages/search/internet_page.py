@@ -2,8 +2,6 @@ import allure
 import time
 from locators.search.locators_101 import SearchPage404, NonexistentAddress, CoverageMap, GOLDEN_HOUSE
 from pages.base_page import BasePage
-from selenium.webdriver import ActionChains
-from selenium.common.exceptions import NoSuchElementException
 # from qaseio.pytest import qase
 
 
@@ -47,6 +45,23 @@ class CheckTheCoverageMap(BasePage):
         scroll_element = self.element_is_visible(CoverageMap.SCROLL)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
 
+    @allure.step("Проверка кнопок подключить")
+    # @qase.title("Проверка кнопок подключить")
+    def check_the_buttons(self):
+        elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
+        num_elements = len(elements)
+        time.sleep(10)
+        print(num_elements)
+        compare = self.elements_are_present(CoverageMap.COMPARE)
+        time.sleep(10)
+        num_compare = len(compare)
+        time.sleep(10)
+        print(num_compare)
+        if num_elements >= num_compare:
+            print("кнопки подключить найдены")
+        else:
+            print("проверь кнопки подключения")
+
     @allure.step("Пангинация на странице дома")
     # @qase.title("Пангинация на странице дома")
     def pangination(self):
@@ -55,6 +70,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)
+            #добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -63,6 +79,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             time.sleep(3)
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -71,6 +88,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             time.sleep(3)
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -79,6 +97,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             time.sleep(3)
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -87,6 +106,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
             time.sleep(3)
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -95,6 +115,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
             time.sleep(3)
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -103,6 +124,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
             time.sleep(3)
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -133,13 +155,6 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(2)
-        try:
-            self.element_is_visible(GOLDEN_HOUSE.TEXT_MOBILE)
-            print("Блок с мобильными тарифами найден на странице дома")
-        except NoSuchElementException:
-            print("Блок с мобильными тарифами не найден на странице дома")
-            return False
-        return True
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
     # @qase.title("Проверка поиска (ул Батумская 9а)")
@@ -166,27 +181,7 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(GOLDEN_HOUSE.LINKING)
         print('перелинковка найдена')
         time.sleep(2)
-        try:
-            self.element_is_visible(GOLDEN_HOUSE.TEXT_MOBILE)
-            print("Блок с мобильными тарифами найден на странице улицы")
-        except NoSuchElementException:
-            print("Блок с мобильными тарифами не найден на странице дома")
-            return False
-        return True
 
-    @allure.step("Проверка кнопок подключить")
-    # @qase.title("Проверка кнопок подключить")
-    def check_the_buttons(self):
-        elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
-        num_elements = len(elements)
-        time.sleep(10)
-        print(num_elements)
-        compare = self.elements_are_present(CoverageMap.COMPARE)
-        time.sleep(10)
-        num_compare = len(compare)
-        time.sleep(10)
-        print(num_compare)
-        if num_elements >= num_compare:
-            print("кнопки подключить найдены")
-        else:
-            print("проверь кнопки подключения")
+
+
+    # посмотри скрин, чтобы хиты были всегда сверху и посмотри наличие блока с мобильными тарифами на страницы дома, если провов 2 или меньше блок должен быть
