@@ -8,9 +8,9 @@ class WaitCallLocators:
     CHOOSE_MSK_REGION = (By.XPATH, "(//a[contains(text(), 'Московская область')])[1]")
     TARIFFS_BUTTON = (By.XPATH, "(//a[@datatest='main_tariff_button'])[1]")
     SCROLL = (By.XPATH, "(//a[contains(text(), 'МТС')])[2]")
-    BUTTON_WAIT_FOR_CALL = (By.XPATH, "//div[contains(text(), 'жду звонка')]")
+    BUTTON_WAIT_FOR_CALL = (By.XPATH, "//button[contains(text(), 'жду звонка')]")
     WRITE_TELEPHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
-    BUTTON_CALL_ME = (By.XPATH, "//div[contains(text(), 'Жду звонка')]")
+    BUTTON_CALL_ME = (By.XPATH, "//button[contains(text(), 'Жду звонка')]")
 
 
 class OfficeOrder:
@@ -19,20 +19,19 @@ class OfficeOrder:
     CLICK_ON_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     CHOOSE_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_ON_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
-    TENDER_BUTTON = (By.XPATH, "//div[contains(text(), 'Запустить тендер')]")
+    TENDER_BUTTON = (By.XPATH, "//button[contains(text(), 'Запустить тендер')]")
     PERSON_INPUT = (By.XPATH, "//input[@datatest='business_order_input_person']")
     TELEPHON_INPUT = (By.XPATH, "//input[@datatest='business_order_input_tel']")
-    BUTTON_SEND_ORDER = (By.XPATH, "(//div[contains(text(), 'Отправить заявку')])[1]")
+    BUTTON_SEND_ORDER = (By.XPATH, "(//button[contains(text(), 'Отправить заявку')])[1]")
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[1]")
-
 
 class PopUpPhoneNub:
     CHOOSE_MOSCOW = (By.XPATH, "(//a[contains(text(), 'Москва')])[1]")
-    BUTTON_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+    BUTTON_SHOW_TARIFFS = (By.XPATH, "(//button[contains(text(), 'показать тарифы')])[1]")
     NUMBER_INPUT = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
     NUMBER_SECOND_INPUT = (By.XPATH, "(//input[@autocomplete='tel'])[2]")
-    BUTTON_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
-    BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
+    BUTTON_SHOW_RESULTS = (By.XPATH, "//button[contains(text(), 'Показать результаты')]")
+    BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//button[contains(text(), 'Оставить заявку')]")
     POP_UP_TEXT = (By.XPATH, "(//img[@alt='icon']/../div)[1]")
 
 
@@ -40,11 +39,11 @@ class AddreesTariffForm:
     CLOSE_POP_UP = (By.XPATH, "//div[@datatest='close_popup1_from_quiz_input_tel']")
     BUTTON_CONNECT = (By.XPATH, "(//div[@datatest='providers_form_inspect_connect_tariff_button'])[1]")
     INPUT_MOBILE_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
-    BUTTON_SEND_APPLICATION = (By.XPATH, "//div[contains(text(), 'Отправить заявку')]")
+    BUTTON_SEND_APPLICATION = (By.XPATH, "//button[contains(text(), 'Отправить заявку')]")
     OPEN_PPOPUP = (By.XPATH, f"(// span[contains(text(), 'Подключить')])[{randint(0, 4)}]")
     TEXT = (By.XPATH, "(//div[contains(text(), 'телефон')])[1]")
     INPUT_NUMBER_SECOND = (By.XPATH, "//input[@datatest='providers_provider_order_input_tel']")
-    BUTTON_SEND_APL_SECOND = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
+    BUTTON_SEND_APL_SECOND = (By.XPATH, "//button[contains(text(), 'Оставить заявку')]")
     SCROLL = (By.XPATH, "//div[contains(text(), 'Показать все детали тарифа')]")
     TARIFF_POPUP_NUM = (By.XPATH, "//input[@datatest='popup_tariff_order_input_tel']")
 
@@ -54,7 +53,7 @@ class OutOfTownApplication:
     OUT_OF_TOWN_BUTTON = (By.XPATH, "//a[contains(text(), 'Интернет на дачу')]")
     INPUT_NAME = (By.XPATH, "(//input[@datatest='order_form_input_name'])[1]")
     INPUT_NUMBER = (By.XPATH, "(//input[@datatest='order_form_input_tel'])[1]")
-    BUTTON_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Подключиться')])[1]")
+    BUTTON_CONNECTION = (By.XPATH, "(//button[contains(text(), 'Подключиться')])[1]")
     TEXT_ASSERT = (By.XPATH, "(//div[contains(text(), 'Спасибо, ваша заявка на подключение принята')])[1]")
 
 
@@ -71,7 +70,6 @@ class RecentlyConnectionTariffs:
     CHECK_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Проверить')])[2]")
     BUTTON_FOR_CONNECTION = (By.XPATH, "(//span[contains(text(), 'Подключить')])[3]")
 
-
 class NonPartnerCardRecCon:
     PROVIDERS_BUTTON = (By.XPATH, "(//a[contains(text(), 'провайдеры')])[1]")
     CHOSE_PROVIDER_FILTER = (By.XPATH, "//input[@datatest='providers_provider_input_filter']")
@@ -82,9 +80,8 @@ class NonPartnerCardRecCon:
     CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[2]")
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
-    SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+    SHOW_TARIFFS = (By.XPATH, "(//button[contains(text(), 'показать тарифы')])[1]")
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
-
 
 class ReferralUrlTariff:
     CHOSE_ABK_WELCOME = (By.XPATH, "(//div[contains(text(), 'АВК-Веллком')])[2]")
@@ -106,6 +103,6 @@ class OneClickLocators:
     SCROLL_TOHOME_PAGE = (By.XPATH, "(//h2)[6]")
     SCROLL_TOHOME_PAGEM = (By.XPATH, "(//h2)[6]")
     NUMBER_OF_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
-    BUTTON_CHOSE_THE_TARIFF = (By.XPATH, "//div[contains(text(), 'Подобрать тариф')]")
+    BUTTON_CHOSE_THE_TARIFF = (By.XPATH, "//button[contains(text(), 'Подобрать тариф')]")
     TEXT_CHECK = (By.XPATH, "//div[contains(text(), 'Ваша заявка принята! Мы свяжемся с вами в ближайшее время.')]")
-    BUTTON_GET_CONSULTATION = (By.XPATH, "//div[contains(text(), 'Получить консультацию')]")
+    BUTTON_GET_CONSULTATION = (By.XPATH, "//button[contains(text(), 'Получить консультацию')]")
