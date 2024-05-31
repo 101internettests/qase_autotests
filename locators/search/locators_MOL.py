@@ -14,6 +14,4 @@ class CoverageMapMol:
     CHOOSE_THE_HOUSE_11 = (By.XPATH, "(//a[contains(text(), '11')])[2]")
     SCROLL = (By.XPATH, "//div[contains(text(), 'Отзывы о Москва Онлайн на Яндекс Картах')]")
     TEXT_MOBILE = (By.XPATH, "//h2[contains(text(), 'Мобильный интернет со скоростью до 100 Мб/с на б-р Тестовом')]")
-
-
-
+    LINKING = (By.XPATH, "//h2[contains(text(), 'Другие адреса в Москве')]")

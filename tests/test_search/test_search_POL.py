@@ -1,5 +1,6 @@
 from pages.search.pol_page import CheckPage404, CheckTheCoverageMapPol
 import allure
+import time
 
 
 # from qaseio.pytest import qase
@@ -11,13 +12,25 @@ class TestSearch:
         search_page.open()
         search_page.check_nonexistent_address_pol()
 
-    @allure.title("Проверка карты покрытия в Санкт-Петербурге")
-    # @qase.title("Проверка карты покрытия в Санкт-Петербурге")
+    @allure.title("Проверка поиска в Колпино")
+    # @qase.title("Проверка поиска в Колпино")
     def test_map_spb(self, driver):
         search_page = CheckTheCoverageMapPol(driver, "https://piter-online.net/")
         search_page.open()
-        search_page.change_region_on_spb()
-        search_page.check_the_coverage_map_anisimova()
+        search_page.change_region_on_kolpino()
+        search_page.check_search_gold_house()
+        search_page.check_the_buttons()
+        time.sleep(3)
+        search_page.pangination()
+
+    @allure.title("Проверка карты покрытия в Лен. обл.")
+    # @qase.title("Проверка карты покрытия в Лен. обл.")
+    def test_map_spb(self, driver):
+        search_page = CheckTheCoverageMapPol(driver, "https://piter-online.net/")
+        search_page.open()
         search_page.change_region_on_lenobl()
-        search_page.check_the_coverage_map_vishnaykova()
         search_page.check_the_coverage_map_test()
+        search_page.check_the_buttons()
+        time.sleep(3)
+        search_page.pangination()
+
