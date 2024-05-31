@@ -8,9 +8,9 @@ class WaitMOLCallLocators:
 
 class PopUpPhoneNubMsk:
     CHOOSE_MOSCOW = (By.XPATH, "(//a[contains(text(), 'Москва')])[1]")
-    BUTTOM_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+    BUTTOM_SHOW_TARIFFS = (By.XPATH, "(//button[contains(text(), 'показать тарифы')])[1]")
     NUMBER_INPUT = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
-    BUTTOM_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
+    BUTTOM_SHOW_RESULTS = (By.XPATH, "//button[contains(text(), 'Показать результаты')]")
 
 
 class ReferralUrlTariffMOL:
