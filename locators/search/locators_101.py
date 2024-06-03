@@ -55,5 +55,6 @@ class GOLDEN_HOUSE:
     BUTTON_SHOW_TARIFFS = (By.XPATH, "(//button[@data-test='find_tohome_button'])[1]")
     TEXT_MOBILE = (By.XPATH,"//h2[contains(text(), 'Мобильный интернет со скоростью до 100 Мбит/с и возможностью раздачи через роутер')]")
     LINKING = (By.XPATH, "//h2[contains(text(), 'Другие адреса в Челябинске')]")
+    SCROLL_2 = (By.XPATH, "//div[contains(text(), 'Мобильная связь')]")
 
 

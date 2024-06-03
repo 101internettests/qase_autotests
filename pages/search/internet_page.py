@@ -2,12 +2,14 @@ import allure
 import time
 from locators.search.locators_101 import SearchPage404, NonexistentAddress, CoverageMap, GOLDEN_HOUSE
 from pages.base_page import BasePage
+
+
 # from qaseio.pytest import qase
 
 
 class CheckPage404(BasePage):
     @allure.step("Поиск текста о 404 странице")
-    #@qase.title("Поиск текста о 404 странице")
+    # @qase.title("Поиск текста о 404 странице")
     def find_text_404(self):
         text_404 = self.element_is_present(SearchPage404.SEARCH_TEXT)
         assert text_404.text == "Ой-ой-ой, мы ничего не нашли по вашему запросу! Но вы можете найти лучшие тарифы по вашему адресу. Просто введите улицу и дом"
@@ -62,6 +64,14 @@ class CheckTheCoverageMap(BasePage):
         else:
             print("проверь кнопки подключения")
 
+    def screenshot(self):
+        # screen = lambda x: self.driver.execute_script('return document.body.parentNode.scroll' + x)
+        # self.driver.set_window_size(screen('width=393'), screen('height=870'))
+        # self.driver.find_element_by_tag_name('body').screenshot('lambdaTestFullPage.png')
+        self.driver.save_screenshot('1.png')
+        #скрины работаю, но скринит не всю страницу, а только видимую часть, можно сделать через скроллы до нужных мест или
+        #попробовать доработать, то что выше (у меня не вишло =((( ) в функции пангинация и функции улиц добавила просто строчку не через функцию, а то скрин будет постоянно заменяться
+
     @allure.step("Пангинация на странице дома")
     # @qase.title("Пангинация на странице дома")
     def pangination(self):
@@ -70,7 +80,12 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)
-            #добавить после каждой страницы скриншот
+            self.driver.save_screenshot('3.png')
+            self.element_is_visible(GOLDEN_HOUSE.SCROLL_2)
+            self.scroll()
+            self.element_is_visible(GOLDEN_HOUSE.SCROLL_2).click()
+            self.driver.save_screenshot('4.png')
+            # добавить после каждой страницы скриншот
             self.check_the_buttons()
         else:
             pass
@@ -155,6 +170,7 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(2)
+        self.driver.save_screenshot('1.png')
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
     # @qase.title("Проверка поиска (ул Батумская 9а)")
@@ -181,7 +197,5 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(GOLDEN_HOUSE.LINKING)
         print('перелинковка найдена')
         time.sleep(2)
-
-
 
     # посмотри скрин, чтобы хиты были всегда сверху и посмотри наличие блока с мобильными тарифами на страницы дома, если провов 2 или меньше блок должен быть
