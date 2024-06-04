@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from random import randint
 
+
 class DailyTagPages101Locators:
     CHOOSE_THE_REGION = (By.XPATH, "//div[@class='app19']")
     WAIT_SOME_TEXT = (By.XPATH, "//span[contains(text(), 'Выберите город или регион')]")
@@ -59,15 +60,16 @@ class AddreesTariffForm:
     CLOSE_POP_UP = (By.XPATH, "//div[@datatest='close_popup1_from_quiz_input_tel']")
     BUTTON_CONNECT = (By.XPATH, "(//div[@datatest='providers_form_inspect_connect_tariff_button'])[1]")
     INPUT_MOBILE_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
-    BUTTON_SEND_APPLICATION = (By.XPATH, "//button[contains(text(), 'Отправить заявку')]")
+    BUTTON_SEND_APPLICATION = (By.XPATH, "//div[contains(text(), 'Отправить заявку')]")
     OPEN_PPOPUP = (By.XPATH, f"(// span[contains(text(), 'Подключить')])[{randint(0, 4)}]")
     TEXT = (By.XPATH, "(//div[contains(text(), 'телефон')])[1]")
     INPUT_NUMBER_SECOND = (By.XPATH, "//input[@datatest='providers_provider_order_input_tel']")
-    BUTTON_SEND_APL_SECOND = (By.XPATH, "//button[contains(text(), 'Оставить заявку')]")
-    BUTTON_SEND_APL_THRID = (By.XPATH, "(//button[contains(text(), 'Оставить заявку')])[3]")
+    BUTTON_SEND_APL_SECOND = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
+    BUTTON_SEND_APL_THRID = (By.XPATH, "(//div[contains(text(), 'Оставить заявку')])[3]")
     SCROLL = (By.XPATH, "//div[contains(text(), 'Показать все детали тарифа')]")
     TARIFF_POPUP_NUM = (By.XPATH, "//input[@datatest='popup_tariff_order_input_tel']")
-    THANKYOU_BUTTON = (By.XPATH, "//button[@aria-label='Спасибо!']")
+    THANKYOU_BUTTON = (By.XPATH, "//div[@data-test='give_feedback']")
+
 
 class WriteTariffName:
     NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")
