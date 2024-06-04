@@ -192,6 +192,9 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.ACCEPT_FILTER).click()
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_PIC_MOSNET).click()
         time.sleep(3)
+        self.element_is_visible(NonPartnerCardRecCon.CONNECT_BUTTON).click()
+        self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+        self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Выбрать в фильтрах 'АВК-Веллком'")
     @qase.step("Выбрать в фильтрах 'АВК-Веллком'")

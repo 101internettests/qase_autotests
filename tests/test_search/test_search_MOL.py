@@ -22,7 +22,7 @@ class TestSearch:
         search_page.check_search_gold_house()
         search_page.check_the_buttons()
         time.sleep(3)
-        search_page.pangination()
+        search_page.pangination_sharik()
 
     @allure.title("Проверка карты покрытия в Балашихе")
     # @qase.title("Проверка карты покрытия в Балашихе")
@@ -33,6 +33,6 @@ class TestSearch:
         search_page.check_the_coverage_map_test()
         search_page.check_the_buttons()
         time.sleep(3)
-        search_page.pangination()
+        search_page.pangination_test()
 
 
