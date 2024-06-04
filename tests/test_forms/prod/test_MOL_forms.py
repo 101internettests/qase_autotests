@@ -84,9 +84,9 @@ class TestMOLForms:
         forms_page.change_region_moscow()
         forms_page.chose_tariffs_button()
         forms_page.chose_mosnet_provider()
-        forms_page.fill_the_address_provider_card()
-        time.sleep(2)
-        forms_page.fill_popup_number()
+        # forms_page.fill_the_address_provider_card()
+        # time.sleep(2)
+        # forms_page.fill_popup_number()
         time.sleep(60)
 
     @allure.title("Проверка реферальной ссылки с тарифа")

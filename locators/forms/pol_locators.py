@@ -8,12 +8,12 @@ class WaitPOLCallLocators:
 
 
 class PopUpPhoneNubPOL:
-    BUTTON_SHOW_TARIFFS = (By.XPATH, "(//button[contains(text(), 'показать тарифы')])[1]")
+    BUTTON_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
     NUMBER_INPUT = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
-    BUTTON_SHOW_RESULTS = (By.XPATH, "//button[contains(text(), 'Показать результаты')]")
+    BUTTON_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
     POP_UP_TEXT = (By.XPATH, "(//img[@alt='icon']/../div)[1]")
     NUMBER_SECOND_INPUT = (By.XPATH, "(//input[@autocomplete='tel'])[2]")
-    BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//button[contains(text(), 'Оставить заявку')]")
+    BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
 
 class OutOfTownApplicationPOL:
     SCROLL = (By.XPATH, "//a[@aria-label='Главная']")
@@ -42,7 +42,7 @@ class NonPartnerPOL:
     CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
-    SHOW_TARIFFS = (By.XPATH, "(//button[contains(text(), 'показать тарифы')])[1]")
+    SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
 
 class ReferralUrlTariffPOL:

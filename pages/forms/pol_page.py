@@ -1,6 +1,6 @@
 import allure
 import time
-from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication, OneClickLocators, RecentlyConnectionTariffs
+from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication, OneClickLocators, RecentlyConnectionTariffs, NonPartnerCardRecCon
 from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNubPOL, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol, NonPartnerPOL, ReferralUrlTariffPOL, WriteTariffNamePOL
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
@@ -169,12 +169,15 @@ class FormsPage(BasePage):
 
     @allure.step("Выбрать в фильтрах 'А-ТЕЛ'")
     @qase.step("Выбрать в фильтрах 'А-ТЕЛ'")
-    def chose_mosnet_provider(self):
+    def chose_atel_provider(self):
         self.element_is_visible(NonPartnerPOL.CHOSE_PROVIDER_FILTER).send_keys("А-ТЕЛ")
         self.element_is_visible(NonPartnerPOL.CHOSE_ATEL).click()
         self.element_is_visible(NonPartnerPOL.ACCEPT_FILTER).click()
         self.element_is_visible(NonPartnerPOL.CLICK_ON_PIC_ATEL).click()
         time.sleep(3)
+        self.element_is_visible(NonPartnerCardRecCon.CONNECT_BUTTON).click()
+        self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+        self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Заполнить адрес с карточке провайдера")
     @qase.step("Заполнить адрес с карточке провайдера")
