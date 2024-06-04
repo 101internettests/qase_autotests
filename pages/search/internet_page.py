@@ -64,28 +64,24 @@ class CheckTheCoverageMap(BasePage):
         else:
             print("проверь кнопки подключения")
 
-    def screenshot(self):
-        # screen = lambda x: self.driver.execute_script('return document.body.parentNode.scroll' + x)
-        # self.driver.set_window_size(screen('width=393'), screen('height=870'))
-        # self.driver.find_element_by_tag_name('body').screenshot('lambdaTestFullPage.png')
-        self.driver.save_screenshot('1.png')
-        #скрины работаю, но скринит не всю страницу, а только видимую часть, можно сделать через скроллы до нужных мест или
-        #попробовать доработать, то что выше (у меня не вишло =((( ) в функции пангинация и функции улиц добавила просто строчку не через функцию, а то скрин будет постоянно заменяться
+    @allure.step("Скриншот страницы")
+    # @qase.title("Скриншот страницы")
+    def save_screenshot(self):
+        height = self.driver.execute_script('return document.documentElement.scrollHeight')
+        width = self.driver.execute_script('return document.documentElement.scrollWidth')
+        self.driver.set_window_size(width, height)
+        time.sleep(2)
 
-    @allure.step("Пангинация на странице дома")
-    # @qase.title("Пангинация на странице дома")
-    def pangination(self):
+    @allure.step("Пангинация на странице дома ул Петра Туркина")
+    # @qase.title("Пангинация на странице дома ул Петра Туркина")
+    def pangination_turkina(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)
-            self.driver.save_screenshot('3.png')
-            self.element_is_visible(GOLDEN_HOUSE.SCROLL_2)
-            self.scroll()
-            self.element_is_visible(GOLDEN_HOUSE.SCROLL_2).click()
-            self.driver.save_screenshot('4.png')
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
+            self.driver.save_screenshot("101_turkina_2.png")
             self.check_the_buttons()
         else:
             pass
@@ -94,7 +90,8 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             time.sleep(3)
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
+            self.driver.save_screenshot("101_turkina_3.png")
             self.check_the_buttons()
         else:
             pass
@@ -103,7 +100,8 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             time.sleep(3)
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
+            self.driver.save_screenshot("101_turkina_4.png")
             self.check_the_buttons()
         else:
             pass
@@ -112,7 +110,8 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             time.sleep(3)
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
+            self.driver.save_screenshot("101_turkina_5.png")
             self.check_the_buttons()
         else:
             pass
@@ -121,7 +120,8 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
             time.sleep(3)
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
+            self.driver.save_screenshot("101_turkina_6.png")
             self.check_the_buttons()
         else:
             pass
@@ -130,7 +130,8 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
             time.sleep(3)
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
+            self.driver.save_screenshot("101_turkina_7.png")
             self.check_the_buttons()
         else:
             pass
@@ -138,8 +139,9 @@ class CheckTheCoverageMap(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
+            self.driver.save_screenshot("101_turkina_8.png")
             time.sleep(3)
-            # добавить после каждой страницы скриншот
+            self.save_screenshot()
             self.check_the_buttons()
         else:
             pass
@@ -170,7 +172,8 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(2)
-        self.driver.save_screenshot('1.png')
+        self.save_screenshot()
+        self.driver.save_screenshot("101_turkina_1.png")
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
     # @qase.title("Проверка поиска (ул Батумская 9а)")
@@ -197,5 +200,82 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(GOLDEN_HOUSE.LINKING)
         print('перелинковка найдена')
         time.sleep(2)
+        self.save_screenshot()
+        self.driver.save_screenshot("101_batymsksya_1.png")
 
+    @allure.step("Пангинация на странице золотого дома ул Батумская")
+    # @qase.title("Пангинация на странице золотого дома ул Батумская")
+    def pangination_batymsksya(self):
+        if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_2).click()
+            print("переход на страницу 2")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("101_batymsksya_2.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_3):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_3).click()
+            print("переход на страницу 3")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("101_batymsksya_3.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_4):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_4).click()
+            print("переход на страницу 4")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("101_batymsksya_4.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_5):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_5).click()
+            print("переход на страницу 5")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("101_batymsksya_5.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_6):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_6).click()
+            print("переход на страницу 6")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("101_batymsksya_6.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_7):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_7).click()
+            print("переход на страницу 7")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("101_batymsksya_7.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_8):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_8).click()
+            print("переход на страницу 8")
+            self.driver.save_screenshot("101_batymsksya_8.png")
+            time.sleep(3)
+            self.save_screenshot()
+            self.check_the_buttons()
+        else:
+            pass
+
+    # рекомендация при просмотре скринов:
     # посмотри скрин, чтобы хиты были всегда сверху и посмотри наличие блока с мобильными тарифами на страницы дома, если провов 2 или меньше блок должен быть

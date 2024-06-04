@@ -66,13 +66,24 @@ class CheckTheCoverageMapPol(BasePage):
         else:
             print("проверь кнопки подключения")
 
-    @allure.step("Пангинация на странице дома")
-    # @qase.title("Пангинация на странице дома")
-    def pangination(self):
+    @allure.step("Скриншот страницы")
+    # @qase.title("Скриншот страницы")
+    def save_screenshot(self):
+        height = self.driver.execute_script('return document.documentElement.scrollHeight')
+        width = self.driver.execute_script('return document.documentElement.scrollWidth')
+        self.driver.set_window_size(width, height)
+        time.sleep(2)
+
+    @allure.step("Пангинация на странице золотого дома ул Анисимова")
+    # @qase.title("Пангинация на странице золотого дома ул Анисимова")
+    def pangination_anisimova(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_anisimova_2.png")
             self.check_the_buttons()
         else:
             pass
@@ -80,6 +91,9 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_anisimova_3.png")
             self.check_the_buttons()
         else:
             pass
@@ -87,6 +101,9 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_anisimova_4.png")
             self.check_the_buttons()
         else:
             pass
@@ -94,6 +111,9 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_anisimova_5.png")
             self.check_the_buttons()
         else:
             pass
@@ -101,6 +121,9 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_anisimova_6.png")
             self.check_the_buttons()
         else:
             pass
@@ -108,6 +131,9 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_anisimova_7.png")
             self.check_the_buttons()
         else:
             pass
@@ -115,6 +141,9 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
+            self.driver.save_screenshot("pol_anisimova_8.png")
+            time.sleep(3)
+            self.save_screenshot()
             self.check_the_buttons()
         else:
             pass
@@ -144,6 +173,8 @@ class CheckTheCoverageMapPol(BasePage):
         assert self.element_is_visible(CoverageMapPol.LINKING)
         print('перелинковка найдена')
         time.sleep(2)
+        self.save_screenshot()
+        self.driver.save_screenshot("pol_anisimova_1.png")
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
     # @qase.title("Проверка карты покрытия (линия Тестовая)")
@@ -170,4 +201,79 @@ class CheckTheCoverageMapPol(BasePage):
         # self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         # assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
-        self.pangination()
+        self.save_screenshot()
+        self.driver.save_screenshot("pol_testovaya_1.png")
+
+    @allure.step("Пангинация на странице  дома б-р Тестовый")
+    # @qase.title("Пангинация на странице дома б-р Тестовый")
+    def pangination_testovaya(self):
+        if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_2).click()
+            print("переход на страницу 2")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_testovaya_2.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_3):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_3).click()
+            print("переход на страницу 3")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_testovaya_3.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_4):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_4).click()
+            print("переход на страницу 4")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_testovaya_4.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_5):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_5).click()
+            print("переход на страницу 5")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_testovaya_5.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_6):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_6).click()
+            print("переход на страницу 6")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_testovaya_6.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_7):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_7).click()
+            print("переход на страницу 7")
+            time.sleep(3)
+            self.save_screenshot()
+            self.driver.save_screenshot("pol_testovaya_7.png")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_8):
+            self.scroll()
+            self.element_is_visible(CoverageMap.PANGINATION_8).click()
+            print("переход на страницу 8")
+            self.driver.save_screenshot("pol_testovaya_8.png")
+            time.sleep(3)
+            self.save_screenshot()
+            self.check_the_buttons()
+        else:
+            pass
