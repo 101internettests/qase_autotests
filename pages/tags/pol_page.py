@@ -57,12 +57,12 @@ class OneHundredMainPage(BasePage):
         text_in_pop_up = self.element_is_present(PopupSuccess.POP_UP_TEXT).text
         target_text = "Отлично! Подключение возможно. Введите номер телефона, оператор перезвонит вам в ближайшее время."
         if text_in_pop_up == target_text:
-            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(PopupSuccess.CLOSE_SUCCESS_WINDOW).click()
             print("Провайдер доступен в этом доме")
         elif text_in_pop_up != target_text:
-            self.element_is_visible(PopupSuccess.POP_UP_NOT_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(PopupSuccess.POP_UP_NOT_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(PopupSuccess.CLOSE_THE_WINDOW).click()
             self.driver.back()
@@ -82,14 +82,14 @@ class OneHundredMainPage(BasePage):
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
                               "телефона, оператор перезвонит вам в ближайшее "
                               "время."):
-            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(PopupSuccess.CLOSE_SUCCESS_WINDOW).click()
             print("Провайдер доступен в этом доме")
         elif text_in_pop_up != ("Отлично! Подключение возможно. Введите номер "
                                 "телефона, оператор перезвонит вам в ближайшее "
                                 "время."):
-            self.element_is_visible(SpareTagsLocators.POP_UP_NOT_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(SpareTagsLocators.POP_UP_NOT_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(SpareTagsLocators.CLOSE_THE_WINDOW).click()
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
