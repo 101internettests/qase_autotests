@@ -69,14 +69,14 @@ class OneHundredMainPage(BasePage):
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
                               "телефона, оператор перезвонит вам в ближайшее "
                               "время."):
-            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(PopupSuccess.CLOSE_SUCCESS_WINDOW).click()
             print("Провайдер доступен в этом доме")
         elif text_in_pop_up != ("Отлично! Подключение возможно. Введите номер "
                                 "телефона, оператор перезвонит вам в ближайшее "
                                 "время."):
-            self.element_is_visible(PopupSuccess.POP_UP_NOT_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(PopupSuccess.POP_UP_NOT_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(PopupSuccess.CLOSE_THE_WINDOW).click()
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
@@ -123,14 +123,14 @@ class OneHundredMainPage(BasePage):
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
                               "телефона, оператор перезвонит вам в ближайшее "
                               "время."):
-            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(PopupSuccess.CLOSE_SUCCESS_WINDOW).click()
             print("Провайдер доступен в этом доме")
         elif text_in_pop_up != ("Отлично! Подключение возможно. Введите номер "
                                 "телефона, оператор перезвонит вам в ближайшее "
                                 "время."):
-            self.element_is_visible(LocatorsForOtherPages.POP_UP_NOT_SUCCESS_NUMBER).send_keys('1111111111')
+            self.element_is_visible(LocatorsForOtherPages.POP_UP_NOT_SUCCESS_NUMBER).send_keys('3333333333')
             self.element_is_visible(PopupSuccess.POP_UP_SUCCESS_BUTTON).click()
             self.element_is_visible(LocatorsForOtherPages.CLOSE_THE_WINDOW).click()
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
@@ -166,14 +166,14 @@ class OneHundredMainPage(BasePage):
         time.sleep(2)
         self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
-            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("3333333333")
             self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
         else:
             if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
-                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("3333333333")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
             else:
-                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("3333333333")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_THRID).click()
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
@@ -185,14 +185,14 @@ class OneHundredMainPage(BasePage):
         time.sleep(2)
         self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
-            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("3333333333")
             self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
         else:
             if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
-                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("3333333333")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
             else:
-                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("3333333333")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
