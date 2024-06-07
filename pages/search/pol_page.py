@@ -186,6 +186,7 @@ class CheckTheCoverageMapPol(BasePage):
         self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_TEST).click()
         time.sleep(1)
         elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        print('найден блок с мобильными тарифами на странице улицы')
         num_elements = len(elements)
         print(num_elements)
         time.sleep(1)
