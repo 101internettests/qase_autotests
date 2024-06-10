@@ -74,7 +74,7 @@ class CheckTheCoverageMap(BasePage):
 
     @allure.step("Пангинация на странице дома ул Петра Туркина")
     # @qase.title("Пангинация на странице дома ул Петра Туркина")
-    def pangination_turkina(self):
+    def pangination_turkina(self, screenshot_name):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
@@ -92,10 +92,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             time.sleep(3)
-            screenshot_name3 = "101_turkina_3.png"
-            self.save_screenshot(screenshot_name3)
-            with open(screenshot_name3, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name3, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_turkina_3.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -104,10 +104,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             time.sleep(3)
-            screenshot_name4 = "101_turkina_4.png"
-            self.save_screenshot(screenshot_name4)
-            with open(screenshot_name4, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name4, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_turkina_4.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -116,10 +116,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             time.sleep(3)
-            screenshot_name5 = "101_turkina_5.png"
-            self.save_screenshot(screenshot_name5)
-            with open(screenshot_name5, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name5, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_turkina_5.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -128,10 +128,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
             time.sleep(3)
-            screenshot_name6 = "101_turkina_6.png"
-            self.save_screenshot(screenshot_name6)
-            with open(screenshot_name6, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name6, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_turkina_6.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -140,10 +140,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
             time.sleep(3)
-            screenshot_name7 = "101_turkina_7.png"
-            self.save_screenshot(screenshot_name7)
-            with open(screenshot_name7, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name7, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_turkina_7.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -152,10 +152,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
             time.sleep(3)
-            screenshot_name8 = "101_turkina_8.png"
-            self.save_screenshot(screenshot_name8)
-            with open(screenshot_name8, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name8, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_turkina_8.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -186,15 +186,15 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(2)
-        screenshot_name1 = "101_turkina_1.png"
-        self.save_screenshot(screenshot_name1)
-        with open(screenshot_name1, "rb") as file:
-            allure.attach(file.read(), name=screenshot_name1, attachment_type=allure.attachment_type.PNG)
+        screenshot_name = "101_turkina_1.png"
+        self.save_screenshot(screenshot_name)
+        with open(screenshot_name, "rb") as file:
+            allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
 
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
     # @qase.title("Проверка поиска (ул Батумская 9а)")
-    def check_search_gold_house(self):
+    def check_search_gold_house(self, screenshot_name):
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).click()
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).send_keys("Батумская ул")
         time.sleep(3)
@@ -224,16 +224,16 @@ class CheckTheCoverageMap(BasePage):
 
     @allure.step("Пангинация на странице золотого дома ул Батумская")
     # @qase.title("Пангинация на странице золотого дома ул Батумская")
-    def pangination_batymsksya(self):
+    def pangination_batymsksya(self, screenshot_name):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)
-            screenshot_name22 = "101_batymsksya_2.png"
-            self.save_screenshot(screenshot_name22)
-            with open(screenshot_name22, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name22, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_2.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -242,10 +242,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             time.sleep(3)
-            screenshot_name33 = "101_batymsksya_3.png"
-            self.save_screenshot(screenshot_name33)
-            with open(screenshot_name33, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name33, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_3.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -254,10 +254,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             time.sleep(3)
-            screenshot_name44 = "101_batymsksya_4.png"
-            self.save_screenshot(screenshot_name44)
-            with open(screenshot_name44, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name44, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_4.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
 
             self.check_the_buttons()
         else:
@@ -267,10 +267,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             time.sleep(3)
-            screenshot_name55 = "101_batymsksya_5.png"
-            self.save_screenshot(screenshot_name55)
-            with open(screenshot_name55, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name55, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_5.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -279,10 +279,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
             time.sleep(3)
-            screenshot_name66 = "101_batymsksya_6.png"
-            self.save_screenshot(screenshot_name66)
-            with open(screenshot_name66, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name66, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_6.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -291,9 +291,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("101_batymsksya_7.png")
-            allure.attach("101_batymsksya_7.png", allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_7.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -302,10 +303,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
             time.sleep(3)
-            screenshot_name88 = "101_batymsksya_8.png"
-            self.save_screenshot(screenshot_name88)
-            with open(screenshot_name88, "rb") as file:
-                allure.attach(file.read(), name=screenshot_name88, attachment_type=allure.attachment_type.PNG)
+            screenshot_name = "101_batymsksya_8.png"
+            self.save_screenshot(screenshot_name)
+            with open(screenshot_name, "rb") as file:
+                allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
