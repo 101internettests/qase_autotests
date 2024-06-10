@@ -82,6 +82,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_turkina_2.png")
+            allure.attach("101_turkina_2.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -92,6 +93,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_turkina_3.png")
+            allure.attach("101_turkina_3.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -102,6 +104,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_turkina_4.png")
+            allure.attach("101_turkina_4.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -112,6 +115,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_turkina_5.png")
+            allure.attach("101_turkina_5.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -122,6 +126,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_turkina_6.png")
+            allure.attach("101_turkina_6.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -132,6 +137,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_turkina_7.png")
+            allure.attach("101_turkina_7.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -140,6 +146,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
             self.driver.save_screenshot("101_turkina_8.png")
+            allure.attach("101_turkina_8.png", allure.attachment_type.PNG)
             time.sleep(3)
             self.save_screenshot()
             self.check_the_buttons()
@@ -174,6 +181,7 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(2)
         self.save_screenshot()
         self.driver.save_screenshot("101_turkina_1.png")
+        allure.attach("101_turkina_1.png", allure.attachment_type.PNG)
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
     # @qase.title("Проверка поиска (ул Батумская 9а)")
@@ -202,6 +210,7 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(2)
         self.save_screenshot()
         self.driver.save_screenshot("101_batymsksya_1.png")
+        allure.attach("101_batymsksya_1.png", allure.attachment_type.PNG)
 
     @allure.step("Пангинация на странице золотого дома ул Батумская")
     # @qase.title("Пангинация на странице золотого дома ул Батумская")
@@ -213,6 +222,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_batymsksya_2.png")
+            allure.attach("101_batymsksya_2.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -223,6 +233,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_batymsksya_3.png")
+            allure.attach("101_batymsksya_3.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -233,6 +244,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_batymsksya_4.png")
+            allure.attach("101_batymsksya_4.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -243,6 +255,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_batymsksya_5.png")
+            allure.attach("101_batymsksya_5.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -253,6 +266,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_batymsksya_6.png")
+            allure.attach("101_batymsksya_6.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -263,6 +277,7 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.save_screenshot()
             self.driver.save_screenshot("101_batymsksya_7.png")
+            allure.attach("101_batymsksya_7.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -271,6 +286,7 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
             self.driver.save_screenshot("101_batymsksya_8.png")
+            allure.attach("101_batymsksya_8.png", allure.attachment_type.PNG)
             time.sleep(3)
             self.save_screenshot()
             self.check_the_buttons()
