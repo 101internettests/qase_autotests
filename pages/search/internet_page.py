@@ -191,9 +191,7 @@ class CheckTheCoverageMap(BasePage):
         with open(screenshot_name, "rb") as file:
             allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
 
-
     @allure.step("Проверка поиска (ул Батумская 9а)")
-    # @qase.title("Проверка поиска (ул Батумская 9а)")
     def check_search_gold_house(self, screenshot_name):
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).click()
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).send_keys("Батумская ул")
@@ -217,8 +215,8 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(GOLDEN_HOUSE.LINKING)
         print('перелинковка найдена')
         time.sleep(2)
-        screenshot_name = "101_batymsksya_1.png"
-        self.save_screenshot(screenshot_name)
+
+        self.save_screenshot(screenshot_name)  # Сохраняем скриншот
         with open(screenshot_name, "rb") as file:
             allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
 
