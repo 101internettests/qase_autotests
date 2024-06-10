@@ -192,7 +192,7 @@ class CheckTheCoverageMap(BasePage):
             allure.attach(file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
-    def check_search_gold_house(self, screenshot_name):
+    def check_search_gold_house(self):
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).click()
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).send_keys("Батумская ул")
         time.sleep(3)
