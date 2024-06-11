@@ -66,7 +66,7 @@ class CheckTheCoverageMap(BasePage):
 
     @allure.step("Скриншот страницы")
     # @qase.title("Скриншот страницы")
-    def save_screenshot(self):
+    def save_screenshot(self, screenshot_name):
         height = self.driver.execute_script('return document.documentElement.scrollHeight')
         width = self.driver.execute_script('return document.documentElement.scrollWidth')
         self.driver.set_window_size(width, height)
@@ -193,7 +193,6 @@ class CheckTheCoverageMap(BasePage):
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
     def check_search_gold_house(self):
-        screenshot_name = "101_batymsksya_1.png"
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).click()
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).send_keys("Батумская ул")
         time.sleep(3)
