@@ -41,7 +41,7 @@ jobs:
 
       - name: tests
         # if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod --alluredir=allure-results
+        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod tests/test_search  --alluredir=allure-results
         continue-on-error: true
 
       - name: Install Java
