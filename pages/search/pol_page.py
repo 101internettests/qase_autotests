@@ -82,8 +82,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_anisimova_2.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_2.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -92,8 +91,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_anisimova_3.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_3.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -102,8 +100,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_anisimova_4.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_4.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -112,8 +109,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_anisimova_5.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_5.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -122,8 +118,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_anisimova_6.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_6.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -132,8 +127,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_anisimova_7.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_7.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -141,9 +135,8 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
-            self.driver.save_screenshot("pol_anisimova_8.png")
             time.sleep(3)
-            self.save_screenshot()
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_8.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -173,8 +166,7 @@ class CheckTheCoverageMapPol(BasePage):
         assert self.element_is_visible(CoverageMapPol.LINKING)
         print('перелинковка найдена')
         time.sleep(2)
-        self.save_screenshot()
-        self.driver.save_screenshot("pol_anisimova_1.png")
+        allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_1.png", allure.attachment_type.PNG)
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
     # @qase.title("Проверка карты покрытия (линия Тестовая)")
@@ -202,8 +194,8 @@ class CheckTheCoverageMapPol(BasePage):
         # self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         # assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
-        self.save_screenshot()
-        self.driver.save_screenshot("pol_testovaya_1.png")
+        allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_1.png", allure.attachment_type.PNG)
+
 
     @allure.step("Пангинация на странице  дома б-р Тестовый")
     # @qase.title("Пангинация на странице дома б-р Тестовый")
@@ -213,8 +205,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_testovaya_2.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_2.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -223,8 +214,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
             print("переход на страницу 3")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_testovaya_3.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_3.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -233,8 +223,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
             print("переход на страницу 4")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_testovaya_4.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_4.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -243,8 +232,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_5).click()
             print("переход на страницу 5")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_testovaya_5.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_5.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -253,8 +241,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_6).click()
             print("переход на страницу 6")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_testovaya_6.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_6.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -263,8 +250,7 @@ class CheckTheCoverageMapPol(BasePage):
             self.element_is_visible(CoverageMap.PANGINATION_7).click()
             print("переход на страницу 7")
             time.sleep(3)
-            self.save_screenshot()
-            self.driver.save_screenshot("pol_testovaya_7.png")
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_7.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass
@@ -272,9 +258,8 @@ class CheckTheCoverageMapPol(BasePage):
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_8).click()
             print("переход на страницу 8")
-            self.driver.save_screenshot("pol_testovaya_8.png")
             time.sleep(3)
-            self.save_screenshot()
+            allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_8.png", allure.attachment_type.PNG)
             self.check_the_buttons()
         else:
             pass

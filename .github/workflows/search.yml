@@ -1,8 +1,8 @@
 name: search test
 
 on:
-  schedule:
-    - cron: "45 3 * * *"
+#  schedule:
+#    - cron: "45 3 * * *"
   workflow_dispatch:
 
 env:
