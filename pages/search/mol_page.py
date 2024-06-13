@@ -186,7 +186,7 @@ class CheckTheCoverageMapMol(BasePage):
             self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_ONE).click()
             time.sleep(5)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
-        elif num_elements > 2:
+        else:
             self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_ONE).click()
             time.sleep(5)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
