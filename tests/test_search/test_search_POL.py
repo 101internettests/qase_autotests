@@ -8,7 +8,7 @@ from qaseio.pytest import qase
 class TestSearch:
     @allure.title("Проверка отображения страницы 404 при запросе несуществующего URL")
     @qase.title("Проверка отображения страницы 404 при запросе несуществующего URL")
-    # @qase.id(454)
+    @qase.id(454)
     def test_nonexistent_address_pol(self, driver):
         search_page = CheckPage404(driver, "https://piter-online.net/")
         search_page.open()

@@ -145,7 +145,7 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CHOOSE_THE_DISTRICT_KURCHATOVSKI).click()
-        time.sleep(1)
+        time.sleep(2)
         self.element_is_visible(CoverageMap.CHOOSE_THE_STREET_TURKINA).click()
         time.sleep(1)
         elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
