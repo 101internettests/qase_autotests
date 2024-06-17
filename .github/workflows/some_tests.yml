@@ -88,6 +88,7 @@ jobs:
           curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$ARTIFACT_ID/zip" -o artifacts.zip
           REPORT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=github-pages" | jq -r '.artifacts[0].id')
           curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
+          
 
       - name: Unzip artifacts
         run: |
@@ -95,13 +96,14 @@ jobs:
           unzip -q artifacts.zip -d allure-results
           mkdir -p old_pages pages_history
           unzip -q pages.zip -d old_pages
-          tar -xf old_pages/artifact.tar -C pages_history
+          tar -xf old_pages/artifact.tar -C pages_history || { echo "Error: Failed to extract old_pages/artifact.tar"; exit 1; }
       
 
       - name: Copy history to Allure results
         run: |
           cp -r pages_history/history/* allure-results
           cp -r pages_history/history/ allure-results
+          
 
       - name: Store Allure history
         uses: actions/upload-artifact@v4
