@@ -1,6 +1,5 @@
 import allure
 from pages.search.internet_page import CheckPage404, CheckTheCoverageMap
-# from qaseio.pytest import qase
 import time
 from qaseio.pytest import qase
 

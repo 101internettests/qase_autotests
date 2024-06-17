@@ -1,5 +1,4 @@
 import time
-# from qaseio.pytest import qase
 from pages.search.mol_page import CheckPage404, CheckTheCoverageMapMol
 from pages.search.internet_page import CheckTheCoverageMap
 from qaseio.pytest import qase
