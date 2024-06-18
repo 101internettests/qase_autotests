@@ -90,11 +90,12 @@ jobs:
           curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
       - name: Unzip artifacts
         run: |
-          mkdir -p allure-results
-          unzip -q artifacts.zip -d allure-results
-          mkdir -p old_pages pages_history
-          unzip -q pages.zip -d old_pages
-          tar -xf old_pages/artifact.tar -C pages_history
+          try
+            mkdir -p allure-results
+            unzip -q artifacts.zip -d allure-results
+          catch
+            echo "Error unzipping artifacts: $error"
+            exit 1
 
 
       - name: Copy history to Allure results
