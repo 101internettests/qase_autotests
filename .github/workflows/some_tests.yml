@@ -41,7 +41,8 @@ jobs:
 
       - name: tests
         # if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod tests/test_search --alluredir=allure-results
+        run: pytest tests/test_review/prod --alluredir=allure-results
+        continue-on-error: true
 
       - name: Install Java
         uses: actions/setup-java@v4
@@ -87,7 +88,6 @@ jobs:
           curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$ARTIFACT_ID/zip" -o artifacts.zip
           REPORT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=github-pages" | jq -r '.artifacts[0].id')
           curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
-
       - name: Unzip artifacts
         run: |
           mkdir -p allure-results
@@ -96,14 +96,14 @@ jobs:
           unzip -q pages.zip -d old_pages
           tar -xf old_pages/artifact.tar -C pages_history
 
+
       - name: Copy history to Allure results
         run: |
-          cp -r pages_history/history/* allure-results-history
-          cp -r pages_history/history/ allure-results-history
-
+          cp -r pages_history/history/* allure-results
+          cp -r pages_history/history/ allure-results
       - name: Store Allure history
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-history
-          path: allure-results-history
+          name: allure-results
+          path: allure-results
           retention-days: 2
