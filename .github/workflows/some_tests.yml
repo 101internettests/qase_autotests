@@ -84,18 +84,16 @@ jobs:
 
       - name: Download artifacts
         run: |
-          ARTIFACT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=_site" | jq -r '.artifacts[0].id')
-          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$ARTIFACT_ID/zip" -o artifacts.zip
+          ARTIFACT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: ***" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=_site" | jq -r '.artifacts[0].id')
+          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: ***" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$ARTIFACT_ID/zip" -o artifacts.zip
 
           if [ ! -f artifacts.zip ]; then
             echo "Failed to download artifacts.zip"
             exit 1
           fi
 
-          md5sum -c artifacts.zip.sha256  # Verify the integrity of the file using MD5 sum
-
-          REPORT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=github-pages" | jq -r '.artifacts[0].id')
-          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.TOKEN }}" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
+          REPORT_ID=$(curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: ***" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts?name=github-pages" | jq -r '.artifacts[0].id')
+          curl -sL -H "Accept: application/vnd.github.v3+json" -H "Authorization: ***" "https://api.github.com/repos/101internettests/qase_autotests/actions/artifacts/$REPORT_ID/zip" -o pages.zip
       - name: Unzip artifacts
         run: |
           mkdir -p allure-results
