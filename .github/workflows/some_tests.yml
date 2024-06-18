@@ -44,9 +44,10 @@ jobs:
         continue-on-error: true
 
       - name: Install Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v2
         with:
           java-version: '17'
+          distribution: 'temurin'
 
       - name: Install Allure command-line tool
         run: |
