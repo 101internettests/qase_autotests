@@ -100,7 +100,7 @@ jobs:
       - name: Copy history to Allure results
         run: |
           cp -r pages_history/history/* allure-results
-          cp -r pages_history/history/ allure-results
+#          cp -r pages_history/history/ allure-results
       - name: Store Allure history
         uses: actions/upload-artifact@v4
         with:
