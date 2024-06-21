@@ -1,9 +1,9 @@
 name: daily
 
 on:
-  workflow_call:
     schedule:
       - cron: "15 6 * * 1-5"
+    workflow_dispatch:
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
