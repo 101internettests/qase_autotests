@@ -1,32 +1,9 @@
-name: url
+name: daily
 
 on:
   workflow_call:
     schedule:
       - cron: "15 6 * * 1-5"
-    inputs:
-      username:
-        description: 'A username passed from the caller workflow'
-        default: 'john-doe'
-        required: false
-        type: string
-  workflow_dispatch:
-    inputs:
-      qase_api_base_url:
-        description: 'Qase API URL'
-        required: true
-      qase_report:
-        description: 'Enabled/disabled reporting to Qase'
-        required: true
-      qase_project_code:
-        description: 'Qase project code'
-        required: true
-      qase_run_id:
-        description: 'Qase Run ID'
-        required: true
-      qase_run_complete:
-        description: 'Qase Run autocomplete'
-        required: true
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
