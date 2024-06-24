@@ -64,7 +64,7 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
         self.element_is_visible(OfficeOrder.CHOOSE_HOUSE).send_keys("11")
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
-        self.element_is_visible(OfficeOrder.CHOOSE_TYPE).click()
+        # self.element_is_visible(OfficeOrder.CHOOSE_TYPE).click()
         self.element_is_visible(PopUpPhoneNubMsk.BUTTOM_SHOW_TARIFFS).click()
 
     @allure.step("Открыть попап")
