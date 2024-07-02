@@ -20,7 +20,7 @@ def driver():
     if os.getenv("HEADLESS") == "True":
         chrome_options.add_argument("--headless")
     driver = webdriver.Chrome(options=chrome_options)
-    driver.set_window_size(1920, 1080)
+    driver.set_window_size(1920, 4000)
     # driver.maximize_window()
     yield driver
     driver.quit()
