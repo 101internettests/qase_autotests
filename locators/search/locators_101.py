@@ -13,7 +13,7 @@ class NonexistentAddress:
     FIND_THE_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_THE_HOUSE = (By.XPATH, "//li[@datatest='dropdown_list_main']")
     BUTTON_SHOW_THE_RATE = (By.XPATH, "//div[@data-test='find_tohome_button']")
-    CHECK_TEXT = (By.XPATH, "//div[contains(text(), 'К сожалению, автоматический поиск не дал результатов')]")
+    CHECK_TEXT = (By.XPATH, "//div[contains(text(), 'Автоматический поиск не дал результатов')]")
     CHOOSE_TYPE_OF_CONNECTION = (By.XPATH, "//span[contains(text(), 'Тип подключения')]")
     CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[1]")
 

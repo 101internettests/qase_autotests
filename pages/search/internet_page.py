@@ -26,7 +26,7 @@ class CheckPage404(BasePage):
         self.element_is_visible(NonexistentAddress.BUTTON_SHOW_THE_RATE).click()
         time.sleep(2)
         text_automatic_search = self.element_is_present(NonexistentAddress.CHECK_TEXT)
-        assert text_automatic_search.text == "К сожалению, автоматический поиск не дал результатов"
+        assert text_automatic_search.text == "Автоматический поиск не дал результатов"
 
 
 class CheckTheCoverageMap(BasePage):
