@@ -93,7 +93,7 @@ class FormsPage(BasePage):
         self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
             self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
-            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
         else:
             if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
                 self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
@@ -140,7 +140,7 @@ class FormsPage(BasePage):
         self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
             self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
-            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
         else:
             if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
                 self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")

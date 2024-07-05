@@ -109,7 +109,7 @@ class FormsPage(BasePage):
         self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
             self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
-            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
         else:
             if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
                 self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
@@ -125,7 +125,7 @@ class FormsPage(BasePage):
         self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
             self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
-            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
         else:
             if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
                 self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
@@ -133,6 +133,22 @@ class FormsPage(BasePage):
             else:
                 self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+
+    # @allure.step("Заполнить заявку по кнопке 'подключить' 2 вариант")
+    # @qase.step("Заполнить заявку по кнопке 'подключить' 3 вариант")
+    # def fill_connect_to_application_second(self):
+    #     time.sleep(2)
+    #     self.write_tariff_name()
+    #     if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
+    #         self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+    #         self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+    #     else:
+    #         if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
+    #             self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+    #             self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+    #         else:
+    #             self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+    #             self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Выбрать 'интернет на дачу' в футере")
     @qase.step("Выбрать 'интернет на дачу' в футере")

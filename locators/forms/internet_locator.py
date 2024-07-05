@@ -39,7 +39,7 @@ class PopUpPhoneNub:
 class AddreesTariffForm:
     CLOSE_POP_UP = (By.XPATH, "//div[@datatest='close_popup1_from_quiz_input_tel']")
     BUTTON_CONNECT = (By.XPATH, "(//div[@datatest='providers_form_inspect_connect_tariff_button'])[1]")
-    INPUT_MOBILE_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
+    INPUT_MOBILE_PHONE = (By.XPATH, "//input[@datatest='popup_tariff_order_input_tel']")
     BUTTON_SEND_APPLICATION = (By.XPATH, "//div[contains(text(), 'Отправить заявку')]")
     OPEN_PPOPUP = (By.XPATH, f"(// span[contains(text(), 'Подключить')])[{randint(0, 4)}]")
     TEXT = (By.XPATH, "(//div[contains(text(), 'телефон')])[1]")
