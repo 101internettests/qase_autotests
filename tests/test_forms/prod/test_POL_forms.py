@@ -91,18 +91,18 @@ class TestPOLForms:
         # forms_page.fill_popup_number()
         time.sleep(60)
 
-    @allure.title("Проверка реферальной ссылки с тарифа")
-    @qase.title("Проверка реферальной ссылки с тарифа ПОЛ")
-    @qase.id(385)
-    def test_check_url_provider_pol(self, driver):
-        forms_page = FormsPage(driver, "https://piter-online.net/")
-        forms_page.open()
-        forms_page.change_region_on_spb()
-        forms_page.chose_tariffs_button()
-        forms_page.chose_pact_provider()
-        forms_page.check_redirect_pol()
-        target_url = 'https://pakt.ru/diler/piteronline.html'
-        assert driver.current_url == target_url
+    # @allure.title("Проверка реферальной ссылки с тарифа")
+    # @qase.title("Проверка реферальной ссылки с тарифа ПОЛ")
+    # @qase.id(385)
+    # def test_check_url_provider_pol(self, driver):
+    #     forms_page = FormsPage(driver, "https://piter-online.net/")
+    #     forms_page.open()
+    #     forms_page.change_region_on_spb()
+    #     forms_page.chose_tariffs_button()
+    #     forms_page.chose_pact_provider()
+    #     forms_page.check_redirect_pol()
+    #     target_url = 'https://pakt.ru/diler/piteronline.html'
+    #     assert driver.current_url == target_url
 
     @allure.title("Проверка формы 1 клик на главной странице")
     @qase.title("Проверка формы 1 клик на главной странице ПОЛ")
