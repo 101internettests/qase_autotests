@@ -35,7 +35,7 @@ class ReviewOperator:
     SCROLL = (By.XPATH, "//span[contains(text(), 'контакты')]")
     LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
     CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
-    CLICK_OPERATOR = (By.XPATH, "//li[contains(text(), 'МТС')]")
+    CLICK_OPERATOR = (By.XPATH, "(//li[contains(text(), 'МТС')])[5]")
     CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
     LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
 
