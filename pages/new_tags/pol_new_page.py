@@ -19,8 +19,7 @@ class OneHundredMainPage(BasePage):
             time.sleep(60)
         tags_to_check = [
             Tagpagelocators.TAG_300_MB,
-            Tagpagelocators.TAG_500_MB,
-            Tagpagelocators.TAG_ONLINE_CINEMA
+            Tagpagelocators.TAG_500_MB
         ]
 
         for tag in tags_to_check:

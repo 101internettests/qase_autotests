@@ -5,8 +5,8 @@ from qaseio.pytest import qase
 
 @allure.suite("Тесты теговые на ПОЛ")
 class TestPolTags:
-    @allure.title("СПб - тарифы, теги: 'интернет и моб.связь', '100мб/с', '500мб/с', 'онлайн кинотеатр'")
-    @qase.title("СПб - тарифы, теги: 'интернет и моб.связь', '100мб/с', '500мб/с', 'онлайн кинотеатр'")
+    @allure.title("СПб - тарифы, теги: 'интернет и моб.связь', '100мб/с', '500мб/с'")
+    @qase.title("СПб - тарифы, теги: 'интернет и моб.связь', '100мб/с', '500мб/с'")
     @qase.id(354)
     def test_pol_tags(self, driver):
         tags = OneHundredMainPage(driver, "https://piter-online.net/rates/internet-i-mobilnaya-svyaz")

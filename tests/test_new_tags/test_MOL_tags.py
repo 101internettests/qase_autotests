@@ -13,8 +13,8 @@ class TestMOLRatesTags:
         tags.open()
         tags.send_application_region_tag()
 
-    @allure.title("Москва - онлайм, теги: 'дешевый интернет', 'онлайн кинотеатр'")
-    @qase.title("Москва - онлайм, теги: 'дешевый интернет', 'онлайн кинотеатр'")
+    @allure.title("Москва - онлайм, теги: 'дешевый интернет'")
+    @qase.title("Москва - онлайм, теги: 'дешевый интернет'")
     @qase.id(353)
     def test_mol_onlime_tags(self, driver):
         tags = OneHundredMainPage(driver,
