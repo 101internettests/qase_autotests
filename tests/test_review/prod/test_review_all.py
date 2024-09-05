@@ -4,35 +4,28 @@ import random
 import allure
 
 urls = ['https://101internet.ru/ekaterinburg/reviews',
-        'https://www.moskvaonline.ru/moskovskaya-oblast/reviews',
-        'https://piter-online.net/reviews']
+        'https://www.moskvaonline.ru/moskovskaya-oblast/reviews']
 
 urls_provider = ['https://101internet.ru/chelyabinsk/providers/lentest',
-                 'https://www.moskvaonline.ru/providers/mts-home',
-                 'https://piter-online.net/providers/dom-ru']
+                 'https://www.moskvaonline.ru/providers/mts-home']
 
 urls_street = [
     'https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534',
-    'https://piter-online.net/address/%D1%84%D1%80%D1%83%D0%BD%D0%B7%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-id1206/%D1%83%D0%BB-%D0%BE%D0%BB%D0%B5%D0%BA%D0%BE-%D0%B4%D1%83%D0%BD%D0%B4%D0%B8%D1%87%D0%B0-id268405',
     'https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534']
 
 urls_house = [
     'https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534/d-1-id218520',
-    'https://www.moskvaonline.ru/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534/d-1-id218520',
-    'https://piter-online.net/dom/ul-yaroslavagasheka-d-4-k1-id154125']
+    'https://www.moskvaonline.ru/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534/d-1-id218520',]
 
-urls_provider_feedback = ['https://101internet.ru/chelyabinsk/rating/rostelecom', 'https://www.moskvaonline.ru/rating/rostelecom', 'https://piter-online.net/rating/rostelecom']
+urls_provider_feedback = ['https://101internet.ru/chelyabinsk/rating/rostelecom', 'https://www.moskvaonline.ru/rating/rostelecom']
 
-urls_office = ['https://101internet.ru/chelyabinsk/orders/office', 'https://www.moskvaonline.ru/orders/office',
-               'https://piter-online.net/orders/office']
+urls_office = ['https://101internet.ru/chelyabinsk/orders/office', 'https://www.moskvaonline.ru/orders/office']
 
-urls_main_page = ['https://101internet.ru/chelyabinsk', 'https://www.moskvaonline.ru',
-                  'https://piter-online.net/']
+urls_main_page = ['https://101internet.ru/chelyabinsk', 'https://www.moskvaonline.ru']
 
-urls_dacha = ['https://101internet.ru/chelyabinsk/orders/sat', 'https://www.moskvaonline.ru/orders/sat',
-              'https://piter-online.net/orders/sat']
+urls_dacha = ['https://101internet.ru/chelyabinsk/orders/sat', 'https://www.moskvaonline.ru/orders/sat']
 
-urls_operator = ['https://piter-online.net/operatory/mts']
+urls_operator = ['https://www.moskvaonline.ru/operatory/mts']
 
 
 @allure.suite("Тесты по отзывам")

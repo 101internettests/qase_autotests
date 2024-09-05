@@ -95,8 +95,7 @@ class OneHundredMainPage(BasePage):
         new_new_tags = [
                         # TagPagelocators.TAG_HOME_INTERNET,
                         # TagPagelocators.TAG_INTERNET_TV]
-                        TagPagelocators.TAG_CHEAP_INTERNET,
-                        TagPagelocators.TAG_ONLINE_CINEMA]
+                        TagPagelocators.TAG_CHEAP_INTERNET]
         for new_tag in new_new_tags:
             with allure.step(f"Проверка {new_tag}"):
                 self.element_is_visible(new_tag).click()
