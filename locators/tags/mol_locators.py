@@ -20,7 +20,7 @@ class PopupFillTheAddress:
     CLICK_ON_THE_STREET = (By.XPATH, "//li[@datatest='dropdown_list_main']")
     POP_UP_FILLED_THE_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[8]")
     CLICK_ON_THE_HOUSE = (By.XPATH, "//li[@datatest='dropdown_list_main']")
-    POP_UP_CONNECTION_TYPE = (By.XPATH, "//span[contains(text(), 'Тип подключения')]")
+    POP_UP_CONNECTION_TYPE = (By.XPATH, "(//span[contains(text(), 'Тип подключения')])[3]")
     POP_UP_SELECT_CONNECTION_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[3]")
     POP_UP_BUTTON_CHECK = (By.XPATH, "(//div[contains(text(), 'Проверить')])[3]")
 
