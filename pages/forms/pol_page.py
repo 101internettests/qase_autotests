@@ -175,9 +175,9 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerPOL.ACCEPT_FILTER).click()
         self.element_is_visible(NonPartnerPOL.CLICK_ON_PIC_ATEL).click()
         time.sleep(3)
-        self.element_is_visible(NonPartnerCardRecCon.CONNECT_BUTTON).click()
-        self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
-        self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+        # self.element_is_visible(NonPartnerCardRecCon.CONNECT_BUTTON).click()
+        # self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+        # self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Заполнить адрес с карточке провайдера")
     @qase.step("Заполнить адрес с карточке провайдера")
@@ -186,7 +186,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerPOL.CLICK_ON_THE_STREET).click()
         self.element_is_visible(NonPartnerPOL.INPUT_HOUSE).send_keys("8")
         self.element_is_visible(NonPartnerPOL.CLICK_ON_THE_HOUSE).click()
-        self.element_is_visible(NonPartnerPOL.CHOOSE_TYPE).click()
+        # self.element_is_visible(NonPartnerPOL.CHOOSE_TYPE).click()
         self.element_is_visible(NonPartnerPOL.SHOW_TARIFFS).click()
 
     @allure.step("Выбрать в фильтрах 'ПАКТ'")

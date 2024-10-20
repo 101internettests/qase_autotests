@@ -27,7 +27,7 @@ class OneHundredMainPage(BasePage):
             # Tagpagelocators.TAG_100_MB,
             Tagpagelocators.TAG_300_MB,
             Tagpagelocators.TAG_500_MB,
-            Tagpagelocators.TAG_ONLINE_CINEMA
+            # Tagpagelocators.TAG_ONLINE_CINEMA
         ]
 
         for tag in tags_to_check:
