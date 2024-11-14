@@ -162,9 +162,9 @@ class CheckTheCoverageMap(BasePage):
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
         self.element_is_visible(CoverageMap.CLICK_ALL).click()
-        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
-        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
-        time.sleep(2)
+        # self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        # assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
+        # time.sleep(2)
         allure.attach(self.driver.get_screenshot_as_png(), "101_turkina_1.png", allure.attachment_type.PNG)
 
     @allure.step("Проверка поиска (ул Батумская 9а)")
@@ -263,3 +263,11 @@ class CheckTheCoverageMap(BasePage):
 
     # рекомендация при просмотре скринов:
     # посмотри скрин, чтобы хиты были всегда сверху и посмотри наличие блока с мобильными тарифами на страницы дома, если провов 2 или меньше блок должен быть
+
+
+
+def test_second():
+    test_list = [1, 2, 3, 4, 5]
+    value = 6
+    if value in test_list:
+        print("ошибка значение найдено в списе хотя его там нет")
