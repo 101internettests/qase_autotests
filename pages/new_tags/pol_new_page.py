@@ -3,13 +3,11 @@ import allure
 from locators.tags.pol_locators import Tagpagelocators, SpareTagsLocators, PopupFillTheAddress, PopupSuccess
 from locators.tags.internet_locators import WriteTariffName, AddreesTariffForm
 from pages.base_page import BasePage
-from qaseio.pytest import qase
 
 
 class OneHundredMainPage(BasePage):
 
     @allure.step("Выполнить проверку всех тегов страницы")
-    @qase.step("Выполнить проверку всех тегов страницы")
     def send_application_region_tag(self):
         with allure.step("Проверка TAG_INTERNET_AND_MOBILE"):
             self.element_is_visible(Tagpagelocators.TAG_INTERNET_AND_MOBILE).click()
@@ -31,7 +29,6 @@ class OneHundredMainPage(BasePage):
                 time.sleep(60)
 
     @allure.step("Заполнить адрес для города Санкт-Петербург")
-    @qase.step("Заполнить адрес для города Санкт-Петербург")
     def execute_actions_after_rates_click(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.element_is_visible(PopupFillTheAddress.POP_UP_FILLED_THE_STREET).send_keys('Димитрова ул')
@@ -40,14 +37,12 @@ class OneHundredMainPage(BasePage):
         self.element_is_visible(PopupFillTheAddress.CLICK_ON_THE_HOUSE).click()
 
     @allure.step("Заполнить попап и выбрать тип соединения")
-    @qase.step("Заполнить попап и выбрать тип соединения")
     def choose_connection_type(self):
         self.element_is_visible(PopupFillTheAddress.POP_UP_CONNECTION_TYPE).click()
         self.element_is_visible(PopupFillTheAddress.POP_UP_SELECT_CONNECTION_TYPE).click()
         self.element_is_visible(PopupFillTheAddress.POP_UP_BUTTON_CHECK).click()
 
     @allure.step("Проверить текст попапа и отправить заявку для города Санкт-Петербург")
-    @qase.step("Проверить текст попапа и отправить заявку для города Санкт-Петербург")
     def voronezh_assert_text(self):
         text_in_pop_up = self.element_is_present(PopupSuccess.POP_UP_TEXT).text
         target_text = "Отлично! Подключение возможно. Введите номер телефона, оператор перезвонит вам в ближайшее время."
@@ -64,7 +59,6 @@ class OneHundredMainPage(BasePage):
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Заполнить адрес для города Санкт-Петербург")
-    @qase.step("Заполнить адрес для города Санкт-Петербург")
     def send_application_provider(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.element_is_visible(SpareTagsLocators.POP_UP_FILLED_THE_STREET).send_keys('Димитрова ул')
@@ -73,7 +67,6 @@ class OneHundredMainPage(BasePage):
         self.element_is_visible(SpareTagsLocators.CLICK_ON_THE_HOUSE).click()
 
     @allure.step("Проверить текст попапа и отправить заявку для города Санкт-Петербург")
-    @qase.step("Проверить текст попапа и отправить заявку для города Санкт-Петербург")
     def moscow_assert_text(self):
         text_in_pop_up = self.element_is_present(PopupSuccess.POP_UP_TEXT).text
         if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
@@ -92,7 +85,6 @@ class OneHundredMainPage(BasePage):
             print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Выполнить проверку тегов страницы")
-    @qase.step("Выполнить проверку тегов страницы")
     def megafon_fill_the_address(self):
         with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             self.element_is_visible(Tagpagelocators.TAG_INTERNET_AND_MOBILE).click()
@@ -111,7 +103,6 @@ class OneHundredMainPage(BasePage):
                 time.sleep(60)
 
     @allure.step("Отправить заявку")
-    @qase.step("Отправить заявку")
     def send_application_from_new_window(self):
         # self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         # self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
@@ -130,7 +121,6 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
     @allure.step("Отправить заявку")
-    @qase.step("Отправить заявку")
     def send_application_from_new_window_new(self):
         # self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         # self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
@@ -149,7 +139,6 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
     @allure.step("Написать название тарифа в консоль")
-    @qase.step("Написать название тарифа в консоль")
     def write_tariff_name(self):
         if self.element_is_visible(WriteTariffName.NAME_OF_TARIFF):
             name_element = self.element_is_visible(WriteTariffName.NAME_OF_TARIFF)

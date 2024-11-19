@@ -4,18 +4,13 @@ from locators.search.locators_101 import SearchPage404, NonexistentAddress, Cove
 from pages.base_page import BasePage
 
 
-# from qaseio.pytest import qase
-
-
 class CheckPage404(BasePage):
     @allure.step("Поиск текста о 404 странице")
-    # @qase.title("Поиск текста о 404 странице")
     def find_text_404(self):
         text_404 = self.element_is_present(SearchPage404.SEARCH_TEXT)
         assert text_404.text == "Ой-ой-ой, мы ничего не нашли по вашему запросу! Но вы можете найти лучшие тарифы по вашему адресу. Просто введите улицу и дом"
 
     @allure.step("Проверка несуществующего адреса")
-    # @qase.title("Проверка несуществующего адреса")
     def check_nonexistent_address(self):
         self.element_is_visible(NonexistentAddress.FIND_THE_STREET).send_keys('Петра Туркина ул')
         self.element_is_visible(NonexistentAddress.CLICK_THE_STREET).click()
@@ -30,9 +25,7 @@ class CheckPage404(BasePage):
 
 
 class CheckTheCoverageMap(BasePage):
-
     @allure.step("Выбрать регион Челябинск в хедере")
-    # @qase.title("Выбрать регион Челябинск в хедере")
     def change_region_on_chb(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
         time.sleep(3)
@@ -42,13 +35,11 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
 
     @allure.step("скролл до пангинации")
-    # @qase.title("скролл до пангинации")
     def scroll(self):
         scroll_element = self.element_is_visible(CoverageMap.SCROLL)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
 
     @allure.step("Проверка кнопок подключить")
-    # @qase.title("Проверка кнопок подключить")
     def check_the_buttons(self):
         elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
         num_elements = len(elements)
@@ -65,7 +56,6 @@ class CheckTheCoverageMap(BasePage):
             print("проверь кнопки подключения")
 
     @allure.step("Скриншот страницы")
-    # @qase.title("Скриншот страницы")
     def save_screenshot(self):
         height = self.driver.execute_script('return document.documentElement.scrollHeight')
         width = self.driver.execute_script('return document.documentElement.scrollWidth')
@@ -73,7 +63,6 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(2)
 
     @allure.step("Пангинация на странице дома ул Петра Туркина")
-    # @qase.title("Пангинация на странице дома ул Петра Туркина")
     def pangination_turkina(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
@@ -140,7 +129,6 @@ class CheckTheCoverageMap(BasePage):
             pass
 
     @allure.step("Проверка карты покрытия (ул Петра Туркина)")
-    # @qase.title("Проверка карты покрытия (ул Петра Туркина)")
     def check_the_coverage_map_turkina(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
@@ -194,7 +182,6 @@ class CheckTheCoverageMap(BasePage):
         allure.attach(self.driver.get_screenshot_as_png(), "batumskaya_1.png", allure.attachment_type.PNG)
 
     @allure.step("Пангинация на странице золотого дома ул Батумская")
-    # @qase.title("Пангинация на странице золотого дома ул Батумская")
     def pangination_batymsksya(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()

@@ -8,7 +8,6 @@ from locators.search.locators_101 import GOLDEN_HOUSE
 
 class CheckPage404(BasePage):
     @allure.step("Проверка несуществующего адреса")
-    # @qase.title("Проверка несуществующего адреса")
     def check_nonexistent_address_pol(self):
         self.element_is_visible(NonexistentAddress.FIND_THE_STREET).send_keys('Олеко Дундича ул')
         self.element_is_visible(NonexistentAddress.CLICK_THE_STREET).click()
@@ -23,7 +22,6 @@ class CheckPage404(BasePage):
 
 class CheckTheCoverageMapPol(BasePage):
     @allure.step("Выбрать регион Колпино в хедере")
-    # @qase.title("Выбрать регион Колпино в хедере")
     def change_region_on_kolpino(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
         time.sleep(3)
@@ -33,7 +31,6 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(1)
 
     @allure.step("Выбрать регион Ленинградская область в хедере")
-    # @qase.title("Выбрать регион Ленинградская область в хедере")
     def change_region_on_lenobl(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
         time.sleep(3)
@@ -43,13 +40,11 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(1)
 
     @allure.step("скролл до пангинации")
-    # @qase.title("скролл до пангинации")
     def scroll(self):
         scroll_element = self.element_is_visible(CoverageMap.SCROLL)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", scroll_element)
 
     @allure.step("Проверка кнопок подключить")
-    # @qase.title("Проверка кнопок подключить")
     def check_the_buttons(self):
         elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
         time.sleep(10)
@@ -67,7 +62,6 @@ class CheckTheCoverageMapPol(BasePage):
             print("проверь кнопки подключения")
 
     @allure.step("Скриншот страницы")
-    # @qase.title("Скриншот страницы")
     def save_screenshot(self):
         height = self.driver.execute_script('return document.documentElement.scrollHeight')
         width = self.driver.execute_script('return document.documentElement.scrollWidth')
@@ -75,7 +69,6 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(2)
 
     @allure.step("Пангинация на странице золотого дома ул Анисимова")
-    # @qase.title("Пангинация на странице золотого дома ул Анисимова")
     def pangination_anisimova(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
@@ -142,7 +135,6 @@ class CheckTheCoverageMapPol(BasePage):
             pass
 
     @allure.step("Проверка поиска (ул Анисимова 2)")
-    # @qase.title("Проверка поиска (ул Анисимова 2)")
     def check_search_gold_house(self):
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).click()
         self.element_is_visible(GOLDEN_HOUSE.INPUT_STREET).send_keys("Анисимова ул")
@@ -169,7 +161,6 @@ class CheckTheCoverageMapPol(BasePage):
         allure.attach(self.driver.get_screenshot_as_png(), "pol_anisimova_1.png", allure.attachment_type.PNG)
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
-    # @qase.title("Проверка карты покрытия (линия Тестовая)")
     def check_the_coverage_map_test(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
@@ -196,9 +187,7 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(3)
         allure.attach(self.driver.get_screenshot_as_png(), "pol_testovaya_1.png", allure.attachment_type.PNG)
 
-
     @allure.step("Пангинация на странице  дома б-р Тестовый")
-    # @qase.title("Пангинация на странице дома б-р Тестовый")
     def pangination_testovaya(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
