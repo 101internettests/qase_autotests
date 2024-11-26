@@ -27,5 +27,5 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: tests
-        run: pytest tests/test_search/test_search_101.py --alluredir=allure-results
+        run: pytest tests/test_search --alluredir=allure-results
         continue-on-error: true
