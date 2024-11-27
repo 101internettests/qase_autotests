@@ -1,0 +1,40 @@
+{
+    "title": "Test run",
+    "execution": {
+        "start_time": 1729453429.143359,
+        "end_time": 1729453453.600544,
+        "duration": 24457,
+        "cumulative_duration": 24432
+    },
+    "stats": {
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "broken": 0,
+        "muted": 0,
+        "total": 1
+    },
+    "results": [
+        {
+            "id": "fbfbf274-5634-4f2a-9c9c-546a9670566c",
+            "title": "\u0421\u041f\u0431 - \u0442\u0430\u0440\u0438\u0444\u044b, \u0442\u0435\u0433\u0438: '\u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u0438 \u043c\u043e\u0431.\u0441\u0432\u044f\u0437\u044c', '100\u043c\u0431/\u0441', '500\u043c\u0431/\u0441', '\u043e\u043d\u043b\u0430\u0439\u043d \u043a\u0438\u043d\u043e\u0442\u0435\u0430\u0442\u0440'",
+            "status": "passed",
+            "duration": 24432,
+            "thread": "12672-MainThread"
+        }
+    ],
+    "threads": [
+        "12672-MainThread"
+    ],
+    "suites": [],
+    "environment": null,
+    "host_data": {
+        "system": "Windows",
+        "node": "DESKTOP-VFG743U",
+        "release": "10",
+        "version": "10.0.22631",
+        "machine": "AMD64",
+        "python": "3.11.9.final.0",
+        "pip": "24.0"
+    }
+}

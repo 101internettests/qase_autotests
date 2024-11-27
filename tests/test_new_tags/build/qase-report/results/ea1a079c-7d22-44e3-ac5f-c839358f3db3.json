@@ -1,0 +1,183 @@
+{
+    "id": "ea1a079c-7d22-44e3-ac5f-c839358f3db3",
+    "title": "\u0421\u041f\u0431 - \u0442\u0430\u0440\u0438\u0444\u044b, \u0442\u0435\u0433\u0438: '\u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u0438 \u043c\u043e\u0431.\u0441\u0432\u044f\u0437\u044c', '100\u043c\u0431/\u0441', '500\u043c\u0431/\u0441', '\u043e\u043d\u043b\u0430\u0439\u043d \u043a\u0438\u043d\u043e\u0442\u0435\u0430\u0442\u0440'",
+    "signature": "tests/test_new_tags/test_POL_tags.py::TestPolTags::test_pol_tags",
+    "run_id": null,
+    "testops_id": 354,
+    "execution": {
+        "start_time": 1724306356.1416712,
+        "status": "passed",
+        "end_time": 1724306771.330884,
+        "duration": 415189,
+        "stacktrace": null,
+        "thread": "30536-MainThread"
+    },
+    "fields": {},
+    "attachments": [],
+    "steps": [
+        {
+            "id": "c6d3b26d-e8b6-4c64-bb5d-3e5acc54341b",
+            "step_type": "text",
+            "data": {
+                "action": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 \u0432\u0441\u0435\u0445 \u0442\u0435\u0433\u043e\u0432 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b",
+                "expected_result": null
+            },
+            "parent_id": null,
+            "execution": {
+                "start_time": 1724306360.36481,
+                "status": "passed",
+                "end_time": 1724306765.2363868,
+                "duration": 404871
+            },
+            "attachments": [],
+            "steps": [
+                {
+                    "id": "0429f165-7fa9-4772-9871-6e673c4ca92f",
+                    "step_type": "text",
+                    "data": {
+                        "action": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443",
+                        "expected_result": null
+                    },
+                    "parent_id": "c6d3b26d-e8b6-4c64-bb5d-3e5acc54341b",
+                    "execution": {
+                        "start_time": 1724306361.1755967,
+                        "status": "passed",
+                        "end_time": 1724306396.0266733,
+                        "duration": 34851
+                    },
+                    "attachments": [],
+                    "steps": [
+                        {
+                            "id": "b4858bc1-31a4-43ea-817e-c92376c79cfb",
+                            "step_type": "text",
+                            "data": {
+                                "action": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0430\u0440\u0438\u0444\u0430 \u0432 \u043a\u043e\u043d\u0441\u043e\u043b\u044c",
+                                "expected_result": null
+                            },
+                            "parent_id": "0429f165-7fa9-4772-9871-6e673c4ca92f",
+                            "execution": {
+                                "start_time": 1724306363.1758714,
+                                "status": "passed",
+                                "end_time": 1724306374.641932,
+                                "duration": 11466
+                            },
+                            "attachments": [],
+                            "steps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "28f56147-0873-425e-8b08-ee0e173659f4",
+                    "step_type": "text",
+                    "data": {
+                        "action": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443",
+                        "expected_result": null
+                    },
+                    "parent_id": "c6d3b26d-e8b6-4c64-bb5d-3e5acc54341b",
+                    "execution": {
+                        "start_time": 1724306457.417459,
+                        "status": "passed",
+                        "end_time": 1724306501.832747,
+                        "duration": 44415
+                    },
+                    "attachments": [],
+                    "steps": [
+                        {
+                            "id": "e257901e-c625-4e2e-a136-5f3d8510006e",
+                            "step_type": "text",
+                            "data": {
+                                "action": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0430\u0440\u0438\u0444\u0430 \u0432 \u043a\u043e\u043d\u0441\u043e\u043b\u044c",
+                                "expected_result": null
+                            },
+                            "parent_id": "28f56147-0873-425e-8b08-ee0e173659f4",
+                            "execution": {
+                                "start_time": 1724306459.4184282,
+                                "status": "passed",
+                                "end_time": 1724306480.4334624,
+                                "duration": 21015
+                            },
+                            "attachments": [],
+                            "steps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "8c693707-30ab-4586-b75a-6a9f1714364a",
+                    "step_type": "text",
+                    "data": {
+                        "action": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443",
+                        "expected_result": null
+                    },
+                    "parent_id": "c6d3b26d-e8b6-4c64-bb5d-3e5acc54341b",
+                    "execution": {
+                        "start_time": 1724306563.6874099,
+                        "status": "passed",
+                        "end_time": 1724306608.0264323,
+                        "duration": 44339
+                    },
+                    "attachments": [],
+                    "steps": [
+                        {
+                            "id": "163ec75d-fec8-4367-a04e-63ab5ca5eb3a",
+                            "step_type": "text",
+                            "data": {
+                                "action": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0430\u0440\u0438\u0444\u0430 \u0432 \u043a\u043e\u043d\u0441\u043e\u043b\u044c",
+                                "expected_result": null
+                            },
+                            "parent_id": "8c693707-30ab-4586-b75a-6a9f1714364a",
+                            "execution": {
+                                "start_time": 1724306565.6885772,
+                                "status": "passed",
+                                "end_time": 1724306586.6475348,
+                                "duration": 20958
+                            },
+                            "attachments": [],
+                            "steps": []
+                        }
+                    ]
+                },
+                {
+                    "id": "76834cdd-744a-4029-8ead-c8cec539c523",
+                    "step_type": "text",
+                    "data": {
+                        "action": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443",
+                        "expected_result": null
+                    },
+                    "parent_id": "c6d3b26d-e8b6-4c64-bb5d-3e5acc54341b",
+                    "execution": {
+                        "start_time": 1724306669.8547614,
+                        "status": "passed",
+                        "end_time": 1724306705.2354186,
+                        "duration": 35380
+                    },
+                    "attachments": [],
+                    "steps": [
+                        {
+                            "id": "bf082c8a-dc08-45e6-ba6d-2201485ad8b9",
+                            "step_type": "text",
+                            "data": {
+                                "action": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0430\u0440\u0438\u0444\u0430 \u0432 \u043a\u043e\u043d\u0441\u043e\u043b\u044c",
+                                "expected_result": null
+                            },
+                            "parent_id": "76834cdd-744a-4029-8ead-c8cec539c523",
+                            "execution": {
+                                "start_time": 1724306671.8549142,
+                                "status": "passed",
+                                "end_time": 1724306683.3477354,
+                                "duration": 11492
+                            },
+                            "attachments": [],
+                            "steps": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "params": {},
+    "author": null,
+    "relations": [],
+    "muted": false,
+    "message": null,
+    "suite": null
+}

@@ -1,0 +1,24 @@
+{
+    "id": "fbfbf274-5634-4f2a-9c9c-546a9670566c",
+    "title": "\u0421\u041f\u0431 - \u0442\u0430\u0440\u0438\u0444\u044b, \u0442\u0435\u0433\u0438: '\u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u0438 \u043c\u043e\u0431.\u0441\u0432\u044f\u0437\u044c', '100\u043c\u0431/\u0441', '500\u043c\u0431/\u0441', '\u043e\u043d\u043b\u0430\u0439\u043d \u043a\u0438\u043d\u043e\u0442\u0435\u0430\u0442\u0440'",
+    "signature": "tests/test_tags/prod/test_POL_tags.py::TestPolTags::test_pol_tags",
+    "run_id": null,
+    "testops_id": null,
+    "execution": {
+        "start_time": 1729453429.1674156,
+        "status": "passed",
+        "end_time": 1729453453.5995402,
+        "duration": 24432,
+        "stacktrace": null,
+        "thread": "12672-MainThread"
+    },
+    "fields": {},
+    "attachments": [],
+    "steps": [],
+    "params": {},
+    "author": null,
+    "relations": [],
+    "muted": false,
+    "message": null,
+    "suite": null
+}

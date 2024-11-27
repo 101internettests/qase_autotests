@@ -1,0 +1,24 @@
+{
+    "id": "f0dd080e-afc9-4fed-bd65-93fea68d0bc0",
+    "title": "test_check_search_chrome",
+    "signature": "tests/test.py::TestSearChrome::TestSearChrome::test_check_search_chrome",
+    "run_id": null,
+    "testops_id": null,
+    "execution": {
+        "start_time": 1731258121.0738058,
+        "status": "passed",
+        "end_time": 1731261258.2430599,
+        "duration": 3137169,
+        "stacktrace": null,
+        "thread": "11352-MainThread"
+    },
+    "fields": {},
+    "attachments": [],
+    "steps": [],
+    "params": {},
+    "author": null,
+    "relations": [],
+    "muted": false,
+    "message": null,
+    "suite": null
+}
