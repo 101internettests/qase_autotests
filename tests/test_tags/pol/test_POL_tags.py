@@ -13,6 +13,6 @@ class TestPolTags:
     @allure.title("СПб - ростелеком, теги: 'интернет и моб.связь', 'домашний интернет', 'интернет и тв'")
     def test_pol_rostelecom_tags(self, driver):
         tags = OneHundredMainPage(driver,
-                                  "https://piter-online.net/providers/rostelecom/rates/internet-i-mobilnaya-svyaz")
+                                  "https://101inter:test101@stage.next.piter-online.net/providers/rostelecom/rates/internet-i-mobilnaya-svyaz")
         tags.open()
         tags.megafon_fill_the_address()

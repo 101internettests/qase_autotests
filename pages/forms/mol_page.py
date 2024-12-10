@@ -179,7 +179,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_STREET).click()
         self.element_is_visible(NonPartnerCardRecCon.INPUT_HOUSE).send_keys("1")
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_HOUSE).click()
-        self.element_is_visible(NonPartnerCardRecCon.CHOOSE_TYPE).click()
+        # self.element_is_visible(NonPartnerCardRecCon.CHOOSE_TYPE).click()
         self.element_is_visible(NonPartnerCardRecCon.SHOW_TARIFFS).click()
 
     @allure.step("Выбрать регион Московская область в хедере")

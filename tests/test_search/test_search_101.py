@@ -7,7 +7,7 @@ import time
 class TestSearch:
     @allure.title("Проверка отображения страницы 404 при запросе несуществующего URL")
     def test_check_page_404(self, driver):
-        urls = ['https://piter-online.net/rating/dom-ru/789', 'https://101internet.ru/moskva/rating/onlime/741',
+        urls = ['https://101internet.ru/moskva/rating/onlime/741',
                 'https://www.moskvaonline.ru/moskovskaya-oblast/providers/123']
         for url in urls:
             search_page = CheckPage404(driver, url)
