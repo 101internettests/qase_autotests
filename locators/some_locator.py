@@ -12,3 +12,4 @@ class SeoTextLocator:
     SCROLL_THREE = (By.XPATH, "(//h2[text()='Частые вопросы'])")
     SCROLL_FOUR = (By.XPATH, "(//div[@class='FAQItem_root__0pRZE'])[4]")
     SCROLL_FIVE= (By.XPATH, "(//div[@class='FAQItem_root__0pRZE'])[6]")
+    CHOOSE_THE_FORM = (By.XPATH, "//button[@aria-label='Закрыть']")

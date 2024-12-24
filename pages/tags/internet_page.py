@@ -4,9 +4,20 @@ from locators.tags.internet_locators import DailyTagPages101Locators, TagPageloc
 from locators.tags.internet_locators import PopupFillTheAddress, PopupSuccess
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
-
+from pages.page import TestsSeoCheck
+from locators.some_locator import SeoTextLocator
 
 class OneHundredMainPage(BasePage):
+
+    def close_form(self):
+        # Проверяем, видим ли элемент
+        popup_close_button = self.element_is_visible(SeoTextLocator.CHOOSE_THE_FORM)
+        if popup_close_button:
+            # Если элемент видим, то кликаем по нему
+            popup_close_button.click()
+        else:
+            # Логируем, если элемент не найден
+            print("Попап не обнаружен, пропускаем закрытие.")
 
     @allure.step("Открыть страницу Тарифы")
     def open_rates(self):
@@ -20,6 +31,7 @@ class OneHundredMainPage(BasePage):
             self.choose_connection_type()
             self.voronezh_assert_text()
             time.sleep(60)
+            self.close_form()
         with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
@@ -46,9 +58,9 @@ class OneHundredMainPage(BasePage):
     @allure.step("Заполнить адрес для города Воронеж")
     def execute_actions_after_rates_click(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-        self.element_is_visible(PopupFillTheAddress.POP_UP_FILLED_THE_STREET).send_keys('Полевая ул')
+        self.element_is_visible(PopupFillTheAddress.POP_UP_FILLED_THE_STREET).send_keys('Максима Горького ул')
         self.element_is_visible(PopupFillTheAddress.CLICK_ON_THE_STREET).click()
-        self.element_is_visible(PopupFillTheAddress.POP_UP_FILLED_THE_HOUSE).send_keys('5')
+        self.element_is_visible(PopupFillTheAddress.POP_UP_FILLED_THE_HOUSE).send_keys('53')
         self.element_is_visible(PopupFillTheAddress.CLICK_ON_THE_HOUSE).click()
 
     @allure.step("Заполнить попап и выбрать тип соединения")
@@ -140,6 +152,7 @@ class OneHundredMainPage(BasePage):
         self.choose_connection_type()
         self.moscow_assert_text()
         time.sleep(60)
+        self.close_form()
         with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()

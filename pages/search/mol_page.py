@@ -4,7 +4,7 @@ from locators.search.locators_101 import NonexistentAddress, CoverageMap
 from locators.search.locators_MOL import CoverageMapMol
 from pages.base_page import BasePage
 from locators.search.locators_101 import GOLDEN_HOUSE
-
+from locators.some_locator import SeoTextLocator
 
 class CheckPage404(BasePage):
     @allure.step("Проверка несуществующего адреса")
@@ -21,6 +21,16 @@ class CheckPage404(BasePage):
 
 
 class CheckTheCoverageMapMol(BasePage):
+    def close_form(self):
+        # Проверяем, видим ли элемент
+        popup_close_button = self.element_is_visible(SeoTextLocator.CHOOSE_THE_FORM)
+        if popup_close_button:
+            # Если элемент видим, то кликаем по нему
+            popup_close_button.click()
+        else:
+            # Логируем, если элемент не найден
+            print("Попап не обнаружен, пропускаем закрытие.")
+
     @allure.step("Выбрать регион Балашиха в хедере")
     def change_region_on_blsh(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
@@ -71,6 +81,7 @@ class CheckTheCoverageMapMol(BasePage):
     @allure.step("Пангинация на странице золотого дома ул Шарикоподшипниковская")
     def pangination_sharik(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.close_form()
             self.scroll()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
@@ -189,6 +200,7 @@ class CheckTheCoverageMapMol(BasePage):
     def pangination_test(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
+            self.close_form()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)

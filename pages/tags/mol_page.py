@@ -2,9 +2,18 @@ import time
 import allure
 from locators.tags.mol_locators import TagPagelocators, SpareTagsLocators, PopupFillTheAddress, PopupSuccess
 from pages.base_page import BasePage
-
+from locators.some_locator import SeoTextLocator
 
 class OneHundredMainPage(BasePage):
+    def close_form(self):
+        # Проверяем, видим ли элемент
+        popup_close_button = self.element_is_visible(SeoTextLocator.CHOOSE_THE_FORM)
+        if popup_close_button:
+            # Если элемент видим, то кликаем по нему
+            popup_close_button.click()
+        else:
+            # Логируем, если элемент не найден
+            print("Попап не обнаружен, пропускаем закрытие.")
 
     @allure.step("Выполнить проверку всех тегов страницы")
     def send_application_region_tag(self):
@@ -14,6 +23,7 @@ class OneHundredMainPage(BasePage):
             self.choose_connection_type()
             self.voronezh_assert_text()
             time.sleep(60)
+            self.close_form()
             # self.driver.back()
         # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
         #     self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
@@ -84,6 +94,7 @@ class OneHundredMainPage(BasePage):
         self.choose_connection_type()
         self.moscow_assert_text()
         time.sleep(60)
+        self.close_form()
         # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             # self.driver.back()
             # self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()

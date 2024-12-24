@@ -2,9 +2,10 @@ import allure
 import time
 from locators.search.locators_101 import SearchPage404, NonexistentAddress, CoverageMap, GOLDEN_HOUSE
 from pages.base_page import BasePage
-
+from locators.some_locator import SeoTextLocator
 
 class CheckPage404(BasePage):
+
     @allure.step("Поиск текста о 404 странице")
     def find_text_404(self):
         text_404 = self.element_is_present(SearchPage404.SEARCH_TEXT)
@@ -25,6 +26,15 @@ class CheckPage404(BasePage):
 
 
 class CheckTheCoverageMap(BasePage):
+    def close_form(self):
+        # Проверяем, видим ли элемент
+        popup_close_button = self.element_is_visible(SeoTextLocator.CHOOSE_THE_FORM)
+        if popup_close_button:
+            # Если элемент видим, то кликаем по нему
+            popup_close_button.click()
+        else:
+            # Логируем, если элемент не найден
+            print("Попап не обнаружен, пропускаем закрытие.")
     @allure.step("Выбрать регион Челябинск в хедере")
     def change_region_on_chb(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
@@ -185,6 +195,7 @@ class CheckTheCoverageMap(BasePage):
     def pangination_batymsksya(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.scroll()
+            self.close_form()
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
             print("переход на страницу 2")
             time.sleep(3)

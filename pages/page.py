@@ -128,3 +128,13 @@ class TestsSeoCheck(BasePage):
             print("Timed out waiting for the scroll target element to become visible")
         except Exception as e:
             print(f"Error scrolling to element: {e}")
+
+    def close_form(self):
+        # Проверяем, видим ли элемент
+        popup_close_button = self.element_is_visible(SeoTextLocator.CHOOSE_THE_FORM)
+        if popup_close_button:
+            # Если элемент видим, то кликаем по нему
+            popup_close_button.click()
+        else:
+            # Логируем, если элемент не найден
+            print("Попап не обнаружен, пропускаем закрытие.")

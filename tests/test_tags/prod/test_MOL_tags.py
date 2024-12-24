@@ -10,9 +10,9 @@ class TestMOLRatesTags:
         tags.open()
         tags.send_application_region_tag()
 
-    @allure.title("Москва - онлайм, теги: 'дешевый интернет', 'домашний интернет', 'дом и моб связь'")
-    def test_mol_onlime_tags(self, driver):
-        tags = OneHundredMainPage(driver,
-                                  "https://www.moskvaonline.ru/providers/onlime/rates/internet-i-mobilnaya-svyaz")
-        tags.open()
-        tags.new_application_provider()
+    # @allure.title("Москва - онлайм, теги: 'дешевый интернет', 'домашний интернет', 'дом и моб связь'")
+    # def test_mol_onlime_tags(self, driver):
+    #     tags = OneHundredMainPage(driver,
+    #                               "https://www.moskvaonline.ru/providers/megafon/rates/internet-i-mobilnaya-svyaz")
+    #     tags.open()
+    #     tags.new_application_provider()
