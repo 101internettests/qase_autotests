@@ -1,4 +1,4 @@
-name: url
+name: some
 
 on:
   workflow_dispatch:
