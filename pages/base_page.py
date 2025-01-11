@@ -1,6 +1,10 @@
 import time
+import uuid
+
+import allure
 # import allure
 from selenium.common import TimeoutException
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait as wait
 
@@ -9,7 +13,7 @@ class BasePage:
     __timeout = 10
 
     def __init__(self, driver, url):
-        self.driver = driver
+        self.driver: WebDriver = driver
         self.url = url
 
     @staticmethod
@@ -34,7 +38,9 @@ class BasePage:
                 self.highlight(element)
                 return element
         except TimeoutException:
-            return False
+            saved_png = self.driver.get_screenshot_as_png()
+            allure.attach(saved_png, uuid.uuid4(), allure.attachment_type.PNG)
+            raise Exception(f"Не найден локатор {locator}")
 
     def elements_are_visible(self, locator, timeout=__timeout):
         return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
