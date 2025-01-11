@@ -11,7 +11,7 @@ class TestSearch:
         search_page = CheckPage404(driver, "https://www.moskvaonline.ru/")
         search_page.open()
         search_page.check_nonexistent_address_mol()
-
+;;;;
     @allure.title("Проверка поиска Москве")
     def test_pagination(self, driver):
         search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
