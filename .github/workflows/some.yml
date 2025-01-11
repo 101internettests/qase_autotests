@@ -1,0 +1,30 @@
+name: url
+
+on:
+  workflow_dispatch:
+
+env:
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  CHAT_ID: ${{ secrets.CHAT_ID }}
+  TOKEN: ${{ secrets.TOKEN }}
+  HEADLESS: ${{ secrets.HEADLESS }}
+
+jobs:
+  build-php:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4.1.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: tests
+        run: pytest -v -s tests/test_some
+        continue-on-error: true
