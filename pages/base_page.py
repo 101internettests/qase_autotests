@@ -39,7 +39,7 @@ class BasePage:
                 return element
         except TimeoutException:
             saved_png = self.driver.get_screenshot_as_png()
-            allure.attach(saved_png, uuid.uuid4(), allure.attachment_type.PNG)
+            allure.attach(saved_png, str(uuid.uuid4()), allure.attachment_type.PNG)
             raise Exception(f"Не найден локатор {locator}")
 
     def elements_are_visible(self, locator, timeout=__timeout):
